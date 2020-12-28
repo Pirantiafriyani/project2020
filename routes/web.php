@@ -4,6 +4,7 @@ use App\Http\Controllers\ArsipController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\LayoutsController;
 use App\Http\Controllers\LoketController;
+use App\Http\Controllers\MonitoringController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,7 +28,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 // ---------------------------------------------------------------------------------
 // layouts
-Route::get('/layouts',[LayoutsController::class, 'index'])->name('layouts.index');
+Route::get('/monitoring',[MonitoringController::class, 'index'])->name('monitoring.index');
 
 // ---------------------------------------------------------------------------------
 Route::get('/laporan',[LaporanController::class, 'index'])->name('laporan.index');
