@@ -39,31 +39,38 @@
                                         </select>
                                     </div>
                                 </div>
+                              
                                 <div class="col-md-6 col-lg-6">
                                     <div class="form-group">
-                                        <label for="defaultSelect">Desa</label>
-                                        <select class="form-control form-control" id="defaultSelect">
-                                            <option>Tengah</option>
+                                        <label for="defaultSelect">Kecamatan</label>
+                                        <select name="" id="" class="form-control selectpicker"  data-live-search="true" data-title="Pilih Kecamatan" >
+                                            @foreach ($loketDesa as $desa)
+                                            <option value="{{ $desa->id }}">{{ $desa->kecamatan }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <label for="defaultSelect">Kecamatan</label>
-                                        <select class="form-control form-control" id="defaultSelect">
-                                            <option>Cibinong</option>
+                                        <label for="defaultSelect">Desa</label>
+                                        <select name="" id="" class="form-control selectpicker"  data-live-search="true" data-title="Pilih Desa" >
+                                            @foreach ($loketDesa as $desa)
+                                            <option value="{{ $desa->id }}">{{ $desa->name }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label for="defaultSelect">Jenis Permohonan</label>
-                                        <select class="form-control form-control" id="defaultSelect">
-                                            <option>Roya</option>
-                                            <option>Balik Nama</option>
+                                        <select name="" id="" class="form-control selectpicker"  data-live-search="true" data-title="Pilih Jenis Permohonan" >
+                                            @foreach ($loketLayanan as $layanan)
+                                            <option value="{{ $layanan->id }}">{{ $layanan->layanan }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label for="defaultSelect">Petugas</label>
-                                        <select class="form-control form-control" id="defaultSelect">
-                                            <option>Jamaludin</option>
-                                            <option>Gustiawan</option>
+                                        <select name="" id="" class="form-control selectpicker"  data-live-search="true" data-title="Pilih Petugas" >
+                                            @foreach ($loketLayanan as $layanan)
+                                            <option value="{{ $layanan->id }}">{{ $layanan->petugas }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
 
@@ -107,7 +114,7 @@
                                             <td>{{ $loket->kecamatan }}</td>
                                             <td>{{ $loket->layanan_id }}</td>
                                             <td>{{ $loket->petugas_id}}</td>
-											<td><button class="btn btn-primary" disabled><span class="spinner-grow spinner-grow-sm"></span> Diproses..</button></td>
+											<td><button class="btn btn-warning" disabled><span class="spinner-grow spinner-grow-sm"></span> Diproses..</button></td>
 											<td>
 											<button type="button" class="btn btn-danger"><i class="mdi mdi-delete"></i></button>
 											<button type="button" class="btn btn-info"><i class="mdi mdi-pencil-box"></i></button>

@@ -15,6 +15,7 @@
                                 <table id="basic-datatables" class="display table table-striped table-hover">
                                     <thead>
                                         <tr>
+                                            <th>No.</th>
                                             <th>No.Berkas</th>
                                             <th>Proses Terakhir</th>
                                             <th>No.Hak</th>
@@ -30,18 +31,18 @@
                                     @php
                                     $no = 1;
                                     @endphp
-                                    @foreach ($inputData as $loket)
+                                    @foreach ($arsipData as $arsip)
                                         <tr>
                                             <td>{{ $no++ }}</td>
-                                            <td>{{ $loket->no_berkas }}</td>
-                                            <td>{{ $loket->proses }}</td>
-                                            <td>{{ $loket->no_hak }}</td>
-                                            <td>{{ $loket->jenis_hak }}</td>
-                                            <td>{{ $loket->desa }}</td>
-                                            <td>{{ $loket->kecamatan }}</td>
-                                            <td>{{ $loket->layanan_id }}</td>
-                                            <td>{{ $loket->petugas_id}}</td>
-                                            <td></td>
+                                            <td>{{ $arsip->no_berkas }}</td>
+                                            <td>{{ $arsip->proses }}</td>
+                                            <td>{{ $arsip->no_hak }}</td>
+                                            <td>{{ $arsip->jenis_hak }}</td>
+                                            <td>{{ $arsip->desa }}</td>
+                                            <td>{{ $arsip->kecamatan }}</td>
+                                            <td>{{ $arsip->layanan_id }}</td>
+                                            <td>{{ $arsip->petugas_id }}</td>
+                                            <td><button class="btn btn-success" disabled>Selesai</button></td>
                                         </tr>
                                     @endforeach
                                     </tbody>
