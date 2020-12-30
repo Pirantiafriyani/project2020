@@ -1,6 +1,14 @@
 @extends('layouts/master_1')
 @section('abdurrohman_content')
-
+<style>
+    .select2-results .select2-disabled,  .select2-results__option[aria-disabled=true] {
+        display: none !important;
+    }
+    .select2-container--default .select2-selection--single {
+        height: 35px;
+        border: 1px solid #ececec;
+    }
+</style>
 <div class="main-panel">
     <div class="content">
         <div class="page-inner">
@@ -39,21 +47,21 @@
                                         </select>
                                     </div>
                                 </div>
-                              
+
                                 <div class="col-md-6 col-lg-6">
                                     <div class="form-group">
                                         <label for="defaultSelect">Kecamatan</label>
-                                        <select name="" id="" class="form-control selectpicker"  data-live-search="true" data-title="Pilih Kecamatan" >
-                                            @foreach ($loketDesa as $desa)
-                                            <option value="{{ $desa->id }}">{{ $desa->kecamatan }}</option>
+                                        <select name="" id="kecamatan" class="form-control selectpicker"  data-live-search="true" data-title="Pilih Kecamatan" >
+                                            @foreach ($loketKecamatan as $key => $value)
+                                            <option value="{{ $key }}">{{ $key }}</option>
                                             @endforeach
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label for="defaultSelect">Desa</label>
-                                        <select name="" id="" class="form-control selectpicker"  data-live-search="true" data-title="Pilih Desa" >
+                                        <select name="" id="desa" class="form-control">
                                             @foreach ($loketDesa as $desa)
-                                            <option value="{{ $desa->id }}">{{ $desa->name }}</option>
+                                            <option value="{{ $desa->id }}" data-kecamatan="{{ $desa->kecamatan }}" disabled>{{ $desa->name }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -132,3 +140,4 @@
     </div>
 </div>
 @endsection
+@include('loket.scripts')

@@ -37,11 +37,11 @@
 </head>
 <body>
 	<div class="wrapper classic-wrapper">
-		
+
 		<div class="main-header">
 			<!-- Logo Header -->
 			<div class="logo-header" data-background-color="dark2">
-				
+
             <a href="index.html" class="logo">
 					<img src="https://themekita.com/demo-millenium-bootstrap/millenium/examples/assets/img/logo.svg" alt="navbar brand" class="navbar-brand">
 				</a>
@@ -61,7 +61,7 @@
 
 			<!-- Navbar Header -->
 			<nav class="navbar navbar-header navbar-expand-lg" data-background-color="dark2">
-				
+
 				<div class="container-fluid">
 					<div class="collapse" id="search-nav">
 						<form class="navbar-left navbar-form nav-search mr-md-3">
@@ -145,11 +145,11 @@
 						</div>
                 <ul class="nav nav-secondary">
                     <li class="nav-item">
-                        <a href="#"> <i class="mdi mdi-view-dashboard"></i> 
+                        <a href="#"> <i class="mdi mdi-view-dashboard"></i>
                            <p>Dashboard</p></a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('loket.index') }}"> <i class="mdi mdi-desktop-classic"></i> 
+                        <a href="{{ route('loket.index') }}"> <i class="mdi mdi-desktop-classic"></i>
                             <p>Loket</p></a>
                     </li>
                     <li class="nav-item">
@@ -164,7 +164,7 @@
                         <a href="{{ route('laporan.index') }}"> <i class="mdi mdi-file-chart"></i>
                             <p>Laporan</p></a>
                     </li>
-                    
+
                 </ul>
 					</div>
 				</div>
@@ -173,7 +173,7 @@
 
 			<!-- ISI CONTENT -->
             <!-- ISI CONTENT -->
-        
+
         @yield('abdurrohman_content')
 
             <!-- AKHIR ISI CONTENT -->
@@ -204,11 +204,11 @@
 				</nav>
 				<div class="copyright ml-auto">
 					2018, made with <i class="mdi mdi-monitor"></i> by <a href="http://www.themekita.com">ThemeKita</a>
-				</div>				
+				</div>
 			</div>
 		</footer>
 
-		
+
 		<!-- Custom template | don't include it in your project! -->
 		<div class="custom-template">
 			<div class="title">Settings</div>
@@ -365,12 +365,12 @@
 	<script src="template/assets/js/setting-demo.js"></script>
 	<script src="template/assets/js/demo.js"></script>
 
-	
+
     <script >
             $(document).ready(function() {
                 $('#basic-datatables').DataTable({
                 });
-    
+
                 $('#multi-filter-select').DataTable( {
                     "pageLength": 5,
                     initComplete: function () {
@@ -382,26 +382,26 @@
                                 var val = $.fn.dataTable.util.escapeRegex(
                                     $(this).val()
                                     );
-    
+
                                 column
                                 .search( val ? '^'+val+'$' : '', true, false )
                                 .draw();
                             } );
-    
+
                             column.data().unique().sort().each( function ( d, j ) {
                                 select.append( '<option value="'+d+'">'+d+'</option>' )
                             } );
                         } );
                     }
                 });
-    
+
                 // Add Row
                 $('#add-row').DataTable({
                     "pageLength": 5,
                 });
-    
+
                 var action = '<td> <div class="form-button-action"> <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task"> <i class="fa fa-edit"></i> </button> <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove"> <i class="fa fa-times"></i> </button> </div> </td>';
-    
+
                 $('#addRowButton').click(function() {
                     $('#add-row').dataTable().fnAddData([
                         $("#addName").val(),
@@ -410,9 +410,11 @@
                         action
                         ]);
                     $('#addRowModal').modal('hide');
-    
+
                 });
             });
         </script>
+
+        @stack('scripts')
 </body>
 </html>
