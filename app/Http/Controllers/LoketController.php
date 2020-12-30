@@ -12,10 +12,11 @@ class LoketController extends Controller
     public function index()
     {
         $inputData = Loket::get();
+        $loketKecamatan = Kota::orderBy('kecamatan')->pluck('id', 'kecamatan');
         $loketDesa = Kota::all();
         $loketLayanan = Layanan::all();
 
-        return view('loket.index', compact('inputData', 'loketDesa', 'loketLayanan' ));
+        return view('loket.index', compact('inputData', 'loketDesa', 'loketKecamatan', 'loketLayanan'));
     }
 
     public function store( Request $request)

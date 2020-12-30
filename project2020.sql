@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 30, 2020 at 08:46 AM
+-- Generation Time: Dec 30, 2020 at 10:56 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.0
 
@@ -530,8 +530,10 @@ CREATE TABLE `lokets` (
 --
 
 INSERT INTO `lokets` (`id`, `user_id`, `no_berkas`, `tahun`, `no_hak`, `jenis_hak`, `desa`, `kecamatan`, `layanan_id`, `petugas_id`, `proses`, `status`, `created_at`, `updated_at`) VALUES
-(6, 1, '12345', 2019, 123456, 'HM', 'CICADAS', 'DRAMAGA', 'Roya', NULL, NULL, NULL, '2020-12-30 00:40:58', '2020-12-30 00:40:58'),
-(7, 1, '1253', 2020, 850, 'HGB', 'CILEUNGSI', 'CILEUNGSI', 'Balik Nama', NULL, NULL, NULL, '2020-12-30 00:43:32', '2020-12-30 00:43:32');
+(9, 1, '111', 2020, 100, 'HGU', 'CURUG BITUNG', 'NANGGUNG', 'Balik Nama', NULL, NULL, NULL, '2020-12-30 01:44:48', '2020-12-30 01:44:48'),
+(10, 1, '123', 2020, 6565, 'HM', 'TENGAH', 'CIBINONG', 'Roya', NULL, NULL, NULL, '2020-12-30 01:45:34', '2020-12-30 01:45:34'),
+(11, 1, '0987665', 2020, 6666, 'HGB', 'PAKANSARI', 'CIBINONG', 'Roya', NULL, NULL, NULL, '2020-12-30 02:42:32', '2020-12-30 02:42:32'),
+(12, 1, '12345', 2020, 6565, 'HM', 'CIBODAS', 'RUMPIN', 'Balik Nama', NULL, NULL, NULL, '2020-12-30 02:55:49', '2020-12-30 02:55:49');
 
 -- --------------------------------------------------------
 
@@ -607,7 +609,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('5gy0KQ4ekV8CdoRUHI0XaRh2D4T8gugjAAm3SYVY', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36 Edg/87.0.664.66', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiYWdLWmh0Q2xaNFBoRXJQNHRQa0pUV0pDZUxWRDJMdkVrdnlPMnZUaiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjc6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9sb2tldCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7czoxNzoicGFzc3dvcmRfaGFzaF93ZWIiO3M6NjA6IiQyeSQxMCRnZ2tvcExrRGpNM0tydXlPcWZXTzUueUxKR0ptVGZJTlVyLm9HTUVIeFFyVmpoMEk0SVNUQyI7czoyMToicGFzc3dvcmRfaGFzaF9zYW5jdHVtIjtzOjYwOiIkMnkkMTAkZ2drb3BMa0RqTTNLcnV5T3FmV081LnlMSkdKbVRmSU5Vci5vR01FSHhRclZqaDBJNElTVEMiO30=', 1609314214);
+('5gy0KQ4ekV8CdoRUHI0XaRh2D4T8gugjAAm3SYVY', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36 Edg/87.0.664.66', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiYWdLWmh0Q2xaNFBoRXJQNHRQa0pUV0pDZUxWRDJMdkVrdnlPMnZUaiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjc6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9sb2tldCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7czoxNzoicGFzc3dvcmRfaGFzaF93ZWIiO3M6NjA6IiQyeSQxMCRnZ2tvcExrRGpNM0tydXlPcWZXTzUueUxKR0ptVGZJTlVyLm9HTUVIeFFyVmpoMEk0SVNUQyI7czoyMToicGFzc3dvcmRfaGFzaF9zYW5jdHVtIjtzOjYwOiIkMnkkMTAkZ2drb3BMa0RqTTNLcnV5T3FmV081LnlMSkdKbVRmSU5Vci5vR01FSHhRclZqaDBJNElTVEMiO30=', 1609322152);
 
 -- --------------------------------------------------------
 
@@ -721,7 +723,7 @@ ALTER TABLE `layanans`
 -- AUTO_INCREMENT for table `lokets`
 --
 ALTER TABLE `lokets`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `migrations`

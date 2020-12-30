@@ -1,6 +1,16 @@
 @extends('layouts/master_1')
 @section('abdurrohman_content')
+<style>
+    .select2-results .select2-disabled,
+    .select2-results__option[aria-disabled=true] {
+        display: none !important;
+    }
 
+    .select2-container--default .select2-selection--single {
+        height: 35px;
+        border: 1px solid #ececec;
+    }
+</style>
 <div class="main-panel">
     <div class="content">
         <div class="page-inner">
@@ -11,72 +21,83 @@
                             <h4 class="card-title">Form Pengajuan Pencarian Buku Tanah</h4>
                         </div>
                         <div class="card-body">
-                            <form action="" method="POST" enctype="multipart/form-data">
-                                @csrf 
-                                <div class="form-row">
+                            <form action="" method="POST"  enctype="multipart/form-data">
+                                @csrf
+                                <div class="row">
                                     <div class="col-md-3 col-lg-3">
-                                        <label for="largeInput">No Berkas</label>
-                                        <input type="text" class="form-control form-control" id="" name="no_berkas"
-                                            placeholder="Nomor Berkas">
+                                        <div class="form-group">
+                                            <label for="">No Berkas</label>
+                                            <input type="text" class="form-control" name="no_berkas" id=""
+                                                placeholder="Input Nomor Berkas">
+                                        </div>
                                     </div>
                                     <div class="col-md-3 col-lg-3">
-                                        <label for="largeInput">Tahun</label>
-                                        <input type="text" class="form-control form-control" id="" name="tahun"
-                                            placeholder="Tahun">
+                                        <div class="form-group">
+                                            <label for="">Tahun</label>
+                                            <input type="text" class="form-control" name="tahun" id=""
+                                                placeholder="Input Tahun Berkas">
+                                        </div>
                                     </div>
                                     <div class="col-md-6 col-lg-6">
-                                        <label for="largeInput">No Hak</label>
-                                        <input type="text" class="form-control form-control" id="" name="no_hak"
-                                            placeholder="Nomor Hak">
+                                        <div class="form-group">
+                                            <label for="">No Hak</label>
+                                            <input type="text" class="form-control" name="no_hak" id=""
+                                                placeholder="Nomor Hak">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-6">
+                                        <div class="form-group">
+                                            <label for="">Kecamatan</label>
+                                            <select name="kecamatan" id="kecamatan" class="form-control selectpicker"
+                                                data-live-search="true" data-title="Pilih Kecamatan">
+                                                @foreach ($loketKecamatan as $key => $value)
+                                                <option value="{{ $key }}">{{ $key }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-6">
+                                        <div class="form-group">
+                                            <label for="">Desa</label>
+                                            <select name="desa" id="desa" class="form-control">
+                                                @foreach ($loketDesa as $desa)
+                                                <option value="{{ $desa->name }}"
+                                                    data-kecamatan="{{ $desa->kecamatan }}" disabled>{{ $desa->name }}
+                                                </option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-6">
+                                        <div class="form-group">
+                                            <label for="">Jenis Hak</label>
+                                            <select class="form-control" name="jenis_hak" id="">
+                                                <option>HM</option>
+                                                <option>HGB</option>
+                                                <option>HGU</option>
+                                                <option>HP</option>
+                                                <option>WAKAF</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-6">
+                                        <div class="form-group">
+                                            <label for="">Jenis Permohonan</label>
+                                            <select name="layanan" id="" class="form-control selectpicker"
+                                                data-live-search="true" data-title="Pilih Jenis Permohonan">
+                                                @foreach ($loketLayanan as $layanan)
+                                                <option value="{{ $layanan->name }}">{{ $layanan->name }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
-                                <br>
-                                <div class="form-row">
-                                    <div class="col-md-6 col-lg-6">
-                                        <label for="">Kecamatan</label>
-                                        <select name="kecamatan" id="" class="form-control selectpicker"  data-live-search="true" data-title="Pilih Kecamatan" >
-                                            @foreach ($loketDesa as $desa)
-                                            <option value="{{ $desa->kecamatan }}">{{ $desa->kecamatan }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                    <div class="col-md-6 col-lg-6">
-                                        <label for="">Desa</label>
-                                        <select name="desa" id="" class="form-control selectpicker"  data-live-search="true" data-title="Pilih Desa" >
-                                            @foreach ($loketDesa as $desa)
-                                            <option value="{{ $desa->name }}">{{ $desa->name }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="form-row">
-                                    <div class="col-md-6 col-lg-6">
-                                        <label for="">Jenis Hak</label>
-                                        <select name="jenis_hak" id="" class="form-control form-control" id="defaultSelect">
-                                            <option>HM</option>
-                                            <option>HGB</option>
-                                            <option>HGU</option>
-                                            <option>HP</option>
-                                            <option>WAKAF</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-6 col-lg-6">
-                                        <label for="defaultSelect">Jenis Permohonan</label>
-                                        <select name="layanan" id="" class="form-control selectpicker"  data-live-search="true" data-title="Pilih Jenis Permohonan" >
-                                            @foreach ($loketLayanan as $layanan)
-                                            <option value="{{ $layanan->name }}">{{ $layanan->name }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-                                <br>
                                 <div class="form-group float-right">
                                     <input type="submit" class="btn btn-primary" value="Simpan">
                                 </div>
                             </form>
                         </div>
-                        <br>
+                        <hr>
                         <div class="table-responsive">
                             <table id="basic-datatables" class="display table table-striped table-hover">
                                 <thead>
@@ -113,28 +134,31 @@
                                                     class="spinner-grow spinner-grow-sm"></span> Diproses..</button>
                                         </td>
                                         <td>
-                                            <form class="" action="{{ route('loket.destroy', $loket->id) }}" method="post">
+                                            <form class="" action="{{ route('loket.destroy', $loket->id) }}"
+                                                method="post">
                                                 @csrf
                                                 {{ method_field('DELETE') }}
-                                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Apa Yakin Anda Akan Menghapus Data ini?');">
+                                                <button type="submit" class="btn btn-sm btn-danger"
+                                                    onclick="return confirm('Apa Yakin Anda Akan Menghapus Data ini?');">
                                                     <span class="mdi mdi-delete-empty"></span>
                                                 </button>
                                                 <a href="" class="btn btn-sm btn-info ml-1">
                                                     <span class="mdi mdi-pencil"></span>
-                                                    </a>
+                                                </a>
                                             </form>
-                                            
                                         </td>
                                     </tr>
                                     @endforeach
                                 </tbody>
                             </table>
                         </div>
+                        <br>
+                        <br>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-</div>
 @endsection
+@include('loket.scripts')
