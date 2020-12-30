@@ -35,4 +35,11 @@ class LoketController extends Controller
         Loket::create($loketInput);
         return redirect()->route('loket.index');
     }
+
+    public function destroy(Loket $loket)
+    {
+        $loket->delete();
+        return redirect()->back();
+
+    }
 }

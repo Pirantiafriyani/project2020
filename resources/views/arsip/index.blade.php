@@ -16,33 +16,35 @@
                                     <thead>
                                         <tr>
                                             <th>No.</th>
-                                            <th>No.Berkas</th>
-                                            <th>Proses Terakhir</th>
-                                            <th>No.Hak</th>
-                                            <th>Jenis Hak</th>
-                                            <th>Desa</th>
-                                            <th>Kecamatan</th>
-                                            <th>Permohonan</th>
-                                            <th>Petugas</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
+                                        <th>No.Berkas</th>
+                                        <th>Tahun</th>
+                                        <th>No.Hak</th>
+                                        <th>Jenis Hak</th>
+                                        <th>Desa</th>
+                                        <th>Kecamatan</th>
+                                        <th>Permohonan</th>
+                                        <th>Tanggal Input</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
                                     @php
                                     $no = 1;
                                     @endphp
                                     @foreach ($arsipData as $arsip)
-                                        <tr>
-                                            <td>{{ $no++ }}</td>
-                                            <td>{{ $arsip->no_berkas }}</td>
-                                            <td>{{ $arsip->proses }}</td>
-                                            <td>{{ $arsip->no_hak }}</td>
-                                            <td>{{ $arsip->jenis_hak }}</td>
-                                            <td>{{ $arsip->desa }}</td>
-                                            <td>{{ $arsip->kecamatan }}</td>
-                                            <td>{{ $arsip->layanan_id }}</td>
-                                            <td>{{ $arsip->petugas_id }}</td>
-                                            <td><button class="btn btn-success" disabled>Selesai</button></td>
+                                    <tr>
+                                        <td>{{ $no++ }}</td>
+                                        <td>{{ $arsip->no_berkas }}</td>
+                                        <td>{{ $arsip->tahun }}</td>
+                                        <td>{{ $arsip->no_hak }}</td>
+                                        <td>{{ $arsip->jenis_hak }}</td>
+                                        <td>{{ $arsip->desa }}</td>
+                                        <td>{{ $arsip->kecamatan }}</td>
+                                        <td>{{ $arsip->layanan_id }}</td>
+                                        <td>{{ $arsip->created_at}}</td>
+                                            <td><button class="btn btn-sm btn-success" disabled>Selesai</button></td>
+                                            <td></td>
                                         </tr>
                                     @endforeach
                                     </tbody>

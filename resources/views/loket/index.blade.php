@@ -73,7 +73,6 @@
                                 <br>
                                 <div class="form-group float-right">
                                     <input type="submit" class="btn btn-primary" value="Simpan">
-                                    <input type="submit" class="btn btn-danger" value="Cancel">
                                 </div>
                             </form>
                         </div>
@@ -110,14 +109,21 @@
                                         <td>{{ $loket->kecamatan }}</td>
                                         <td>{{ $loket->layanan_id }}</td>
                                         <td>{{ $loket->created_at}}</td>
-                                        <td><button class="btn btn-warning" disabled><span
+                                        <td><button class="btn btn-sm btn-warning" disabled><span
                                                     class="spinner-grow spinner-grow-sm"></span> Diproses..</button>
                                         </td>
                                         <td>
-                                            <button type="button" class="btn btn-danger"><i
-                                                    class="mdi mdi-delete"></i></button>
-                                            <button type="button" class="btn btn-info"><i
-                                                    class="mdi mdi-pencil-box"></i></button>
+                                            <form class="" action="{{ route('loket.destroy', $loket->id) }}" method="post">
+                                                @csrf
+                                                {{ method_field('DELETE') }}
+                                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Apa Yakin Anda Akan Menghapus Data ini?');">
+                                                    <span class="mdi mdi-delete-empty"></span>
+                                                </button>
+                                                <a href="" class="btn btn-sm btn-info ml-1">
+                                                    <span class="mdi mdi-pencil"></span>
+                                                    </a>
+                                            </form>
+                                            
                                         </td>
                                     </tr>
                                     @endforeach
