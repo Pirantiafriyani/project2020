@@ -61,7 +61,7 @@
                                         <label for="defaultSelect">Desa</label>
                                         <select name="" id="desa" class="form-control">
                                             @foreach ($loketDesa as $desa)
-                                            <option value="{{ $desa->id }}" data-kecamatan="{{ $desa->kecamatan }}" disabled>{{ $desa->name }}</option>
+                                            <option value="{{ $desa->name }}" data-kecamatan="{{ $desa->kecamatan }}" disabled>{{ $desa->name }}</option>
                                             @endforeach
                                         </select>
                                     </div>
