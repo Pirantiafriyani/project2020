@@ -11,100 +11,49 @@
                             <h4 class="card-title">Form Pengajuan Pencarian Buku Tanah</h4>
                         </div>
                         <div class="card-body">
-                            <!-- <form>
-                                <div class="form-row">
-                                    <div class="col-md-6 col-lg-6">
-                                        <label for="largeInput">No Berkas</label>
-                                        <input type="text" class="form-control form-control" id="defaultInput"
-                                            placeholder="Input Nomor Berkas / Tahun (Contoh : 123456/2020)">
-                                    </div>
-                                    <div class="col-md-6 col-lg-6">
-                                        <label for="largeInput">No Hak</label>
-                                        <input type="text" class="form-control form-control" id="defaultInput"
-                                            placeholder="Nomor Hak">
-                                    </div>
-                                    <div class="col-md-6 col-lg-6">
-                                        <label for="defaultSelect">Jenis Hak</label>
-                                        <select class="form-control form-control" id="defaultSelect">
-                                            <option>HM</option>
-                                            <option>HGB</option>
-                                            <option>HGU</option>
-                                            <option>HP</option>
-                                            <option>WAKAF</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="col-md-6 col-lg-6">
-                                        <label for="defaultSelect">Kecamatan</label>
-                                        <select name="" id="" class="form-control selectpicker"  data-live-search="true" data-title="Pilih Kecamatan" >
-                                            @foreach ($loketDesa as $desa)
-                                            <option value="{{ $desa->id }}">{{ $desa->kecamatan }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                    <div class="col-md-6 col-lg-6">
-                                        <label for="defaultSelect">Desa</label>
-                                        <select name="" id="" class="form-control selectpicker"  data-live-search="true" data-title="Pilih Desa" >
-                                            @foreach ($loketDesa as $desa)
-                                            <option value="{{ $desa->id }}">{{ $desa->name }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                    <div class="col-md-6 col-lg-6">
-                                        <label for="defaultSelect">Jenis Permohonan</label>
-                                        <select name="" id="" class="form-control selectpicker"  data-live-search="true" data-title="Pilih Jenis Permohonan" >
-                                            @foreach ($loketLayanan as $layanan)
-                                            <option value="{{ $layanan->id }}">{{ $layanan->layanan }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                    <div class="form-group float-right">
-                                        <input type="submit" class="btn btn-primary" value="Simpan">
-                                        <input type="submit" class="btn btn-danger" value="Cancel">
-                                    </div>
-                                </div>
-                            </form> -->
-                            <form>
+                            <form action="" method="POST" enctype="multipart/form-data">
+                                @csrf 
                                 <div class="form-row">
                                     <div class="col-md-3 col-lg-3">
                                         <label for="largeInput">No Berkas</label>
-                                        <input type="text" class="form-control form-control" id="defaultInput"
+                                        <input type="text" class="form-control form-control" id="" name="no_berkas"
                                             placeholder="Nomor Berkas">
                                     </div>
                                     <div class="col-md-3 col-lg-3">
                                         <label for="largeInput">Tahun</label>
-                                        <input type="text" class="form-control form-control" id="defaultInput"
+                                        <input type="text" class="form-control form-control" id="" name="tahun"
                                             placeholder="Tahun">
                                     </div>
                                     <div class="col-md-6 col-lg-6">
                                         <label for="largeInput">No Hak</label>
-                                        <input type="text" class="form-control form-control" id="defaultInput"
+                                        <input type="text" class="form-control form-control" id="" name="no_hak"
                                             placeholder="Nomor Hak">
                                     </div>
                                 </div>
+                                <br>
                                 <div class="form-row">
                                     <div class="col-md-6 col-lg-6">
-                                        <label for="defaultSelect">Kecamatan</label>
-                                        <select name="" id="" class="form-control selectpicker"  data-live-search="true" data-title="Pilih Kecamatan" >
+                                        <label for="">Kecamatan</label>
+                                        <select name="kecamatan" id="" class="form-control selectpicker"  data-live-search="true" data-title="Pilih Kecamatan" >
                                             @foreach ($loketDesa as $desa)
-                                            <option value="{{ $desa->id }}">{{ $desa->kecamatan }}</option>
+                                            <option value="{{ $desa->kecamatan }}">{{ $desa->kecamatan }}</option>
                                             @endforeach
                                         </select>
                                     </div>
                                     <div class="col-md-6 col-lg-6">
-                                        <label for="defaultSelect">Desa</label>
-                                        <select name="" id="" class="form-control selectpicker"  data-live-search="true" data-title="Pilih Desa" >
+                                        <label for="">Desa</label>
+                                        <select name="desa" id="" class="form-control selectpicker"  data-live-search="true" data-title="Pilih Desa" >
                                             @foreach ($loketDesa as $desa)
-                                            <option value="{{ $desa->id }}">{{ $desa->name }}</option>
+                                            <option value="{{ $desa->name }}">{{ $desa->name }}</option>
                                             @endforeach
                                         </select>
                                     </div>
                                 </div>
+                                <br>
                                 <div class="form-row">
                                     <div class="col-md-6 col-lg-6">
-                                        <label for="defaultSelect">Jenis Hak</label>
-                                        <select class="form-control form-control" id="defaultSelect">
+                                        <label for="">Jenis Hak</label>
+                                        <select name="jenis_hak" id="" class="form-control form-control" id="defaultSelect">
                                             <option>HM</option>
                                             <option>HGB</option>
                                             <option>HGU</option>
@@ -114,13 +63,14 @@
                                     </div>
                                     <div class="col-md-6 col-lg-6">
                                         <label for="defaultSelect">Jenis Permohonan</label>
-                                        <select name="" id="" class="form-control selectpicker"  data-live-search="true" data-title="Pilih Jenis Permohonan" >
+                                        <select name="layanan" id="" class="form-control selectpicker"  data-live-search="true" data-title="Pilih Jenis Permohonan" >
                                             @foreach ($loketLayanan as $layanan)
-                                            <option value="{{ $layanan->id }}">{{ $layanan->layanan }}</option>
+                                            <option value="{{ $layanan->name }}">{{ $layanan->name }}</option>
                                             @endforeach
                                         </select>
                                     </div>
                                 </div>
+                                <br>
                                 <div class="form-group float-right">
                                     <input type="submit" class="btn btn-primary" value="Simpan">
                                     <input type="submit" class="btn btn-danger" value="Cancel">
@@ -128,13 +78,13 @@
                             </form>
                         </div>
                         <br>
-                        <br>
                         <div class="table-responsive">
                             <table id="basic-datatables" class="display table table-striped table-hover">
                                 <thead>
                                     <tr>
                                         <th>No.</th>
                                         <th>No.Berkas</th>
+                                        <th>Tahun</th>
                                         <th>No.Hak</th>
                                         <th>Jenis Hak</th>
                                         <th>Desa</th>
@@ -153,6 +103,7 @@
                                     <tr>
                                         <td>{{ $no++ }}</td>
                                         <td>{{ $loket->no_berkas }}</td>
+                                        <td>{{ $loket->tahun }}</td>
                                         <td>{{ $loket->no_hak }}</td>
                                         <td>{{ $loket->jenis_hak }}</td>
                                         <td>{{ $loket->desa }}</td>

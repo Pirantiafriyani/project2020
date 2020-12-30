@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 29 Des 2020 pada 18.05
--- Versi server: 10.4.11-MariaDB
--- Versi PHP: 7.4.1
+-- Generation Time: Dec 30, 2020 at 08:46 AM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 8.0.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -25,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `failed_jobs`
+-- Table structure for table `failed_jobs`
 --
 
 CREATE TABLE `failed_jobs` (
@@ -41,7 +40,7 @@ CREATE TABLE `failed_jobs` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kotas`
+-- Table structure for table `kotas`
 --
 
 CREATE TABLE `kotas` (
@@ -51,7 +50,7 @@ CREATE TABLE `kotas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `kotas`
+-- Dumping data for table `kotas`
 --
 
 INSERT INTO `kotas` (`id`, `name`, `kecamatan`) VALUES
@@ -484,58 +483,60 @@ INSERT INTO `kotas` (`id`, `name`, `kecamatan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `layanans`
+-- Table structure for table `layanans`
 --
 
 CREATE TABLE `layanans` (
   `id` int(11) NOT NULL,
-  `layanan` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
   `petugas` varchar(200) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `update_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `layanans`
+-- Dumping data for table `layanans`
 --
 
-INSERT INTO `layanans` (`id`, `layanan`, `petugas`, `created_at`, `update_at`) VALUES
+INSERT INTO `layanans` (`id`, `name`, `petugas`, `created_at`, `update_at`) VALUES
 (1, 'Roya', 'Yayat', '2020-12-28 17:00:00', '2020-12-28 17:00:00'),
 (2, 'Balik Nama', 'Ajat', '2020-12-28 17:00:00', '2020-12-28 17:00:00');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `lokets`
+-- Table structure for table `lokets`
 --
 
 CREATE TABLE `lokets` (
   `id` int(30) NOT NULL,
   `user_id` int(30) NOT NULL,
   `no_berkas` varchar(30) NOT NULL,
+  `tahun` int(10) NOT NULL,
   `no_hak` int(25) NOT NULL,
   `jenis_hak` varchar(25) NOT NULL,
   `desa` varchar(90) NOT NULL,
   `kecamatan` varchar(90) NOT NULL,
   `layanan_id` varchar(30) NOT NULL,
-  `petugas_id` varchar(30) NOT NULL,
-  `proses` varchar(255) NOT NULL,
-  `status` int(2) NOT NULL,
+  `petugas_id` varchar(30) DEFAULT NULL,
+  `proses` varchar(255) DEFAULT NULL,
+  `status` int(2) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `lokets`
+-- Dumping data for table `lokets`
 --
 
-INSERT INTO `lokets` (`id`, `user_id`, `no_berkas`, `no_hak`, `jenis_hak`, `desa`, `kecamatan`, `layanan_id`, `petugas_id`, `proses`, `status`, `created_at`, `updated_at`) VALUES
-(1, 1, '2020/2020', 123, 'HM', 'TENGAH', 'CIBINONG', 'ROYA', 'Tio', 'Cek/12/05/2020', 1, '2020-12-28 17:00:00', '2020-12-28 17:00:00');
+INSERT INTO `lokets` (`id`, `user_id`, `no_berkas`, `tahun`, `no_hak`, `jenis_hak`, `desa`, `kecamatan`, `layanan_id`, `petugas_id`, `proses`, `status`, `created_at`, `updated_at`) VALUES
+(6, 1, '12345', 2019, 123456, 'HM', 'CICADAS', 'DRAMAGA', 'Roya', NULL, NULL, NULL, '2020-12-30 00:40:58', '2020-12-30 00:40:58'),
+(7, 1, '1253', 2020, 850, 'HGB', 'CILEUNGSI', 'CILEUNGSI', 'Balik Nama', NULL, NULL, NULL, '2020-12-30 00:43:32', '2020-12-30 00:43:32');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `migrations`
+-- Table structure for table `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -545,7 +546,7 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `migrations`
+-- Dumping data for table `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -559,7 +560,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `password_resets`
+-- Table structure for table `password_resets`
 --
 
 CREATE TABLE `password_resets` (
@@ -571,7 +572,7 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `personal_access_tokens`
+-- Table structure for table `personal_access_tokens`
 --
 
 CREATE TABLE `personal_access_tokens` (
@@ -589,7 +590,7 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `sessions`
+-- Table structure for table `sessions`
 --
 
 CREATE TABLE `sessions` (
@@ -602,16 +603,16 @@ CREATE TABLE `sessions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `sessions`
+-- Dumping data for table `sessions`
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('EYCzRBkvE2lRFrBMvjwludCOak2GUTz3XjLt46Q7', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiY0djenNHTFN6azBCRUs3cjhqdFNyNWRCOGtPNDJVQzhOZXFpSmc1NyI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjc6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9sb2tldCI7fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7czoxNzoicGFzc3dvcmRfaGFzaF93ZWIiO3M6NjA6IiQyeSQxMCRnZ2tvcExrRGpNM0tydXlPcWZXTzUueUxKR0ptVGZJTlVyLm9HTUVIeFFyVmpoMEk0SVNUQyI7czoyMToicGFzc3dvcmRfaGFzaF9zYW5jdHVtIjtzOjYwOiIkMnkkMTAkZ2drb3BMa0RqTTNLcnV5T3FmV081LnlMSkdKbVRmSU5Vci5vR01FSHhRclZqaDBJNElTVEMiO30=', 1609260670);
+('5gy0KQ4ekV8CdoRUHI0XaRh2D4T8gugjAAm3SYVY', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36 Edg/87.0.664.66', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiYWdLWmh0Q2xaNFBoRXJQNHRQa0pUV0pDZUxWRDJMdkVrdnlPMnZUaiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjc6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9sb2tldCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7czoxNzoicGFzc3dvcmRfaGFzaF93ZWIiO3M6NjA6IiQyeSQxMCRnZ2tvcExrRGpNM0tydXlPcWZXTzUueUxKR0ptVGZJTlVyLm9HTUVIeFFyVmpoMEk0SVNUQyI7czoyMToicGFzc3dvcmRfaGFzaF9zYW5jdHVtIjtzOjYwOiIkMnkkMTAkZ2drb3BMa0RqTTNLcnV5T3FmV081LnlMSkdKbVRmSU5Vci5vR01FSHhRclZqaDBJNElTVEMiO30=', 1609314214);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -630,7 +631,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `two_factor_secret`, `two_factor_recovery_codes`, `remember_token`, `current_team_id`, `profile_photo_path`, `created_at`, `updated_at`) VALUES
@@ -641,44 +642,44 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `tw
 --
 
 --
--- Indeks untuk tabel `failed_jobs`
+-- Indexes for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
 
 --
--- Indeks untuk tabel `kotas`
+-- Indexes for table `kotas`
 --
 ALTER TABLE `kotas`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `layanans`
+-- Indexes for table `layanans`
 --
 ALTER TABLE `layanans`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `lokets`
+-- Indexes for table `lokets`
 --
 ALTER TABLE `lokets`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `migrations`
+-- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `password_resets`
+-- Indexes for table `password_resets`
 --
 ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
--- Indeks untuk tabel `personal_access_tokens`
+-- Indexes for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   ADD PRIMARY KEY (`id`),
@@ -686,7 +687,7 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
--- Indeks untuk tabel `sessions`
+-- Indexes for table `sessions`
 --
 ALTER TABLE `sessions`
   ADD PRIMARY KEY (`id`),
@@ -694,48 +695,48 @@ ALTER TABLE `sessions`
   ADD KEY `sessions_last_activity_index` (`last_activity`);
 
 --
--- Indeks untuk tabel `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `failed_jobs`
+-- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `layanans`
+-- AUTO_INCREMENT for table `layanans`
 --
 ALTER TABLE `layanans`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `lokets`
+-- AUTO_INCREMENT for table `lokets`
 --
 ALTER TABLE `lokets`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT untuk tabel `migrations`
+-- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT untuk tabel `personal_access_tokens`
+-- AUTO_INCREMENT for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;

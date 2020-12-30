@@ -17,4 +17,22 @@ class LoketController extends Controller
 
         return view('loket.index', compact('inputData', 'loketDesa', 'loketLayanan' ));
     }
+
+    public function store( Request $request)
+    {
+        $loketInput = [
+            'no_berkas' => $request->no_berkas,
+            'user_id' => auth()->id(),
+            'tahun' => $request->tahun,
+            'no_hak' => $request->no_hak,
+            'jenis_hak' => $request->jenis_hak,
+            'desa' => $request->desa,
+            'kecamatan'=> $request->kecamatan,
+            'layanan_id' => $request->layanan,
+        ];
+        // return $loketInput;
+
+        Loket::create($loketInput);
+        return redirect()->route('loket.index');
+    }
 }

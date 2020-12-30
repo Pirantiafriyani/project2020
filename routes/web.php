@@ -36,6 +36,7 @@ Route::get('/laporan',[LaporanController::class, 'index'])->name('laporan.index'
 // ---------------------------------------------------------------------------------
 // loket
 Route::get('/loket',[LoketController::class, 'index'])->name('loket.index');
+Route::post('/loket', [LoketController::class, 'store'])->name('loket.store');
 
 // ---------------------------------------------------------------------------------
 // Arsip
