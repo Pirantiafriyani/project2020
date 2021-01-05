@@ -5,6 +5,8 @@ use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\LayoutsController;
 use App\Http\Controllers\LoketController;
 use App\Http\Controllers\MonitoringController;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth/login');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
@@ -38,9 +40,20 @@ Route::get('/laporan',[LaporanController::class, 'index'])->name('laporan.index'
 Route::get('/loket',[LoketController::class, 'index'])->name('loket.index');
 Route::post('/loket', [LoketController::class, 'store'])->name('loket.store');
 Route::delete('/loket{loket}/delete', [LoketController::class, 'destroy'])->name('loket.destroy');
+Route::patch('/loket/{id}/update',[LoketController::class, 'update'])->name('loket.update');
 
 
 // ---------------------------------------------------------------------------------
 // Arsip
 Route::get('/arsip',[ArsipController::class, 'index'])->name('arsip.index');
+
+
+
+Route::get('logout', function ()
+{
+    Auth::logout();
+    Session()->flush();
+
+    return Redirect::to('/');
+})->name('logout');
 

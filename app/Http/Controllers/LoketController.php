@@ -43,4 +43,23 @@ class LoketController extends Controller
         return redirect()->back();
 
     }
+
+    public function update(Request $request, $id)
+    {
+
+      
+            $loket = Loket::find($id);
+            $loket->update([
+                'no_berkas' => $request->no_berkas,
+                'user_id' => auth()->id(),
+                'tahun' => $request->tahun,
+                'no_hak' => $request->no_hak,
+                'jenis_hak' => $request->jenis_hak,
+                'desa' => $request->desa,
+                'kecamatan'=> $request->kecamatan,
+                'layanan_id' => $request->layanan,
+            ]);
+            return $loket;
+            return redirect()->route('loket.index')->with('info', 'Berhasil Diubah');
+    }
 }

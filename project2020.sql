@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 30, 2020 at 10:56 AM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 8.0.0
+-- Waktu pembuatan: 05 Jan 2021 pada 16.49
+-- Versi server: 10.4.11-MariaDB
+-- Versi PHP: 7.4.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -24,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `failed_jobs`
+-- Struktur dari tabel `failed_jobs`
 --
 
 CREATE TABLE `failed_jobs` (
@@ -40,7 +41,7 @@ CREATE TABLE `failed_jobs` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kotas`
+-- Struktur dari tabel `kotas`
 --
 
 CREATE TABLE `kotas` (
@@ -50,7 +51,7 @@ CREATE TABLE `kotas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `kotas`
+-- Dumping data untuk tabel `kotas`
 --
 
 INSERT INTO `kotas` (`id`, `name`, `kecamatan`) VALUES
@@ -483,7 +484,7 @@ INSERT INTO `kotas` (`id`, `name`, `kecamatan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `layanans`
+-- Struktur dari tabel `layanans`
 --
 
 CREATE TABLE `layanans` (
@@ -495,7 +496,7 @@ CREATE TABLE `layanans` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `layanans`
+-- Dumping data untuk tabel `layanans`
 --
 
 INSERT INTO `layanans` (`id`, `name`, `petugas`, `created_at`, `update_at`) VALUES
@@ -505,7 +506,7 @@ INSERT INTO `layanans` (`id`, `name`, `petugas`, `created_at`, `update_at`) VALU
 -- --------------------------------------------------------
 
 --
--- Table structure for table `lokets`
+-- Struktur dari tabel `lokets`
 --
 
 CREATE TABLE `lokets` (
@@ -526,19 +527,24 @@ CREATE TABLE `lokets` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `lokets`
+-- Dumping data untuk tabel `lokets`
 --
 
 INSERT INTO `lokets` (`id`, `user_id`, `no_berkas`, `tahun`, `no_hak`, `jenis_hak`, `desa`, `kecamatan`, `layanan_id`, `petugas_id`, `proses`, `status`, `created_at`, `updated_at`) VALUES
-(9, 1, '111', 2020, 100, 'HGU', 'CURUG BITUNG', 'NANGGUNG', 'Balik Nama', NULL, NULL, NULL, '2020-12-30 01:44:48', '2020-12-30 01:44:48'),
-(10, 1, '123', 2020, 6565, 'HM', 'TENGAH', 'CIBINONG', 'Roya', NULL, NULL, NULL, '2020-12-30 01:45:34', '2020-12-30 01:45:34'),
-(11, 1, '0987665', 2020, 6666, 'HGB', 'PAKANSARI', 'CIBINONG', 'Roya', NULL, NULL, NULL, '2020-12-30 02:42:32', '2020-12-30 02:42:32'),
-(12, 1, '12345', 2020, 6565, 'HM', 'CIBODAS', 'RUMPIN', 'Balik Nama', NULL, NULL, NULL, '2020-12-30 02:55:49', '2020-12-30 02:55:49');
+(14, 1, '2828', 2020, 600, 'HM', 'SUKAJAYA', 'SUKAJAYA', 'Balik Nama', NULL, NULL, NULL, '2021-01-04 06:11:14', '2021-01-04 06:11:14'),
+(15, 1, '123366', 2020, 9000, 'HM', 'CICADAS', 'CIAMPEA', 'Balik Nama', NULL, NULL, NULL, '2021-01-04 08:02:09', '2021-01-04 08:02:09'),
+(16, 1, '66654', 2020, 900, 'HGU', 'CINAGARA', 'CARINGIN', 'Balik Nama', NULL, NULL, NULL, '2021-01-04 08:03:03', '2021-01-04 08:03:03'),
+(17, 1, '9986', 2012, 362, 'HGU', 'SUKARESMI', 'TAMANSARI', 'Balik Nama', NULL, NULL, NULL, '2021-01-04 08:03:29', '2021-01-04 08:03:29'),
+(18, 1, '454', 2020, 9987, 'HGB', 'CARINGIN', 'CARINGIN', 'Roya', NULL, NULL, NULL, '2021-01-04 08:03:57', '2021-01-04 08:03:57'),
+(19, 1, '4444', 2020, 998, 'HM', 'CIBATU TIGA', 'CARIU', 'Roya', NULL, NULL, NULL, '2021-01-04 08:04:18', '2021-01-04 08:04:18'),
+(20, 1, '8887', 2019, 9901, 'HGB', 'CIOMAS', 'TENJO', 'Roya', NULL, NULL, NULL, '2021-01-04 08:06:14', '2021-01-04 08:06:14'),
+(23, 1, '1231', 2012, 900, 'HM', 'CIAWI', 'CIAWI', 'Balik Nama', NULL, NULL, NULL, '2021-01-05 06:24:01', '2021-01-05 06:24:01'),
+(24, 1, '9875', 2013, 12333, 'HGB', 'SUKAMULYA', 'SUKAMAKMUR', 'Roya', NULL, NULL, NULL, '2021-01-05 06:24:34', '2021-01-05 06:24:34');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `migrations`
+-- Struktur dari tabel `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -548,7 +554,7 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `migrations`
+-- Dumping data untuk tabel `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -562,7 +568,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `password_resets`
+-- Struktur dari tabel `password_resets`
 --
 
 CREATE TABLE `password_resets` (
@@ -574,7 +580,7 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `personal_access_tokens`
+-- Struktur dari tabel `personal_access_tokens`
 --
 
 CREATE TABLE `personal_access_tokens` (
@@ -592,7 +598,7 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sessions`
+-- Struktur dari tabel `sessions`
 --
 
 CREATE TABLE `sessions` (
@@ -605,16 +611,18 @@ CREATE TABLE `sessions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `sessions`
+-- Dumping data untuk tabel `sessions`
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('5gy0KQ4ekV8CdoRUHI0XaRh2D4T8gugjAAm3SYVY', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36 Edg/87.0.664.66', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiYWdLWmh0Q2xaNFBoRXJQNHRQa0pUV0pDZUxWRDJMdkVrdnlPMnZUaiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjc6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9sb2tldCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7czoxNzoicGFzc3dvcmRfaGFzaF93ZWIiO3M6NjA6IiQyeSQxMCRnZ2tvcExrRGpNM0tydXlPcWZXTzUueUxKR0ptVGZJTlVyLm9HTUVIeFFyVmpoMEk0SVNUQyI7czoyMToicGFzc3dvcmRfaGFzaF9zYW5jdHVtIjtzOjYwOiIkMnkkMTAkZ2drb3BMa0RqTTNLcnV5T3FmV081LnlMSkdKbVRmSU5Vci5vR01FSHhRclZqaDBJNElTVEMiO30=', 1609322152);
+('Ro2WILtywZKfXnKo8zwglcUCyZAoU5VmzhfQP1ys', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36', 'YTo0OntzOjk6Il9wcmV2aW91cyI7YToxOntzOjM6InVybCI7czoyMToiaHR0cDovLzEyNy4wLjAuMTo4MDAwIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo2OiJfdG9rZW4iO3M6NDA6Imkza0hyY015cEdBV3BDekx0U25WN3dXeTU4Sk1QZU5lMjlsU2dFbHUiO3M6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7fQ==', 1609854103),
+('YBaKjtgZ3KD3pZZ7mqHuYjkP1PRpNCOGFd4qURLf', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoicXAwR05LZkJJeDFvWENLRlI4QTFZSjN5SnJSM1ZkMXM2SzNiQWRvMCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzM6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9sb2tldD9pZD0xNCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7czoxNzoicGFzc3dvcmRfaGFzaF93ZWIiO3M6NjA6IiQyeSQxMCRnZ2tvcExrRGpNM0tydXlPcWZXTzUueUxKR0ptVGZJTlVyLm9HTUVIeFFyVmpoMEk0SVNUQyI7czoyMToicGFzc3dvcmRfaGFzaF9zYW5jdHVtIjtzOjYwOiIkMnkkMTAkZ2drb3BMa0RqTTNLcnV5T3FmV081LnlMSkdKbVRmSU5Vci5vR01FSHhRclZqaDBJNElTVEMiO30=', 1609861489),
+('YZy1cfbB8cFDdx4bW3Nk4KZ4F6G8la7tWSk1Y1ys', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36', 'YTo2OntzOjk6Il9wcmV2aW91cyI7YToxOntzOjM6InVybCI7czoyNzoiaHR0cDovLzEyNy4wLjAuMTo4MDAwL2xva2V0Ijt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo2OiJfdG9rZW4iO3M6NDA6Ik1wYmRZczBuVGx2ZmFOMmVBdk9kVmxTSnBHZllCZzVXU1FoNG15aHEiO3M6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7czoxNzoicGFzc3dvcmRfaGFzaF93ZWIiO3M6NjA6IiQyeSQxMCRnZ2tvcExrRGpNM0tydXlPcWZXTzUueUxKR0ptVGZJTlVyLm9HTUVIeFFyVmpoMEk0SVNUQyI7czoyMToicGFzc3dvcmRfaGFzaF9zYW5jdHVtIjtzOjYwOiIkMnkkMTAkZ2drb3BMa0RqTTNLcnV5T3FmV081LnlMSkdKbVRmSU5Vci5vR01FSHhRclZqaDBJNElTVEMiO30=', 1609860029);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Struktur dari tabel `users`
 --
 
 CREATE TABLE `users` (
@@ -633,55 +641,55 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `users`
+-- Dumping data untuk tabel `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `two_factor_secret`, `two_factor_recovery_codes`, `remember_token`, `current_team_id`, `profile_photo_path`, `created_at`, `updated_at`) VALUES
-(1, 'Abdur', 'user@gmail.com', NULL, '$2y$10$ggkopLkDjM3KruyOqfWO5.yLJGJmTfINUr.oGMEHxQrVjh0I4ISTC', NULL, NULL, NULL, NULL, NULL, '2020-12-11 18:47:42', '2020-12-11 18:50:04');
+(1, 'Abdur', 'user@gmail.com', NULL, '$2y$10$ggkopLkDjM3KruyOqfWO5.yLJGJmTfINUr.oGMEHxQrVjh0I4ISTC', NULL, NULL, 'RBsXI5n0VRsCq3TduScr8s392yWAeOiSRRHsNysU09NzyBzSPflzSYqJbTni', NULL, NULL, '2020-12-11 18:47:42', '2020-12-11 18:50:04');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `failed_jobs`
+-- Indeks untuk tabel `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
 
 --
--- Indexes for table `kotas`
+-- Indeks untuk tabel `kotas`
 --
 ALTER TABLE `kotas`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `layanans`
+-- Indeks untuk tabel `layanans`
 --
 ALTER TABLE `layanans`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `lokets`
+-- Indeks untuk tabel `lokets`
 --
 ALTER TABLE `lokets`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `migrations`
+-- Indeks untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `password_resets`
+-- Indeks untuk tabel `password_resets`
 --
 ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
--- Indexes for table `personal_access_tokens`
+-- Indeks untuk tabel `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   ADD PRIMARY KEY (`id`),
@@ -689,7 +697,7 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
--- Indexes for table `sessions`
+-- Indeks untuk tabel `sessions`
 --
 ALTER TABLE `sessions`
   ADD PRIMARY KEY (`id`),
@@ -697,48 +705,48 @@ ALTER TABLE `sessions`
   ADD KEY `sessions_last_activity_index` (`last_activity`);
 
 --
--- Indexes for table `users`
+-- Indeks untuk tabel `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `failed_jobs`
+-- AUTO_INCREMENT untuk tabel `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `layanans`
+-- AUTO_INCREMENT untuk tabel `layanans`
 --
 ALTER TABLE `layanans`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `lokets`
+-- AUTO_INCREMENT untuk tabel `lokets`
 --
 ALTER TABLE `lokets`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
--- AUTO_INCREMENT for table `migrations`
+-- AUTO_INCREMENT untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `personal_access_tokens`
+-- AUTO_INCREMENT untuk tabel `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;

@@ -59,7 +59,7 @@
                                     <div class="col-md-6 col-lg-6">
                                         <div class="form-group">
                                             <label for="">Desa</label>
-                                            <select name="desa" id="desa" class="form-control">
+                                            <select name="desa" id="desa" class="form-control ">
                                                 @foreach ($loketDesa as $desa)
                                                 <option value="{{ $desa->name }}"
                                                     data-kecamatan="{{ $desa->kecamatan }}" disabled>{{ $desa->name }}
@@ -134,18 +134,20 @@
                                                     class="spinner-grow spinner-grow-sm"></span> Diproses..</button>
                                         </td>
                                         <td>
-                                            <form class="" action="{{ route('loket.destroy', $loket->id) }}"
-                                                method="post">
+                                            @if ($loket->user_id == auth()->id())
+                                            <a href="/loket?id={{ $loket->id }}" class="btn btn-sm btn-info float-right">
+                                                <span class="mdi mdi-pencil"></span>
+                                                </a>
+                                            <form class="" action="{{ route('loket.destroy', $loket) }}" method="POST">
                                                 @csrf
                                                 {{ method_field('DELETE') }}
                                                 <button type="submit" class="btn btn-sm btn-danger"
                                                     onclick="return confirm('Apa Yakin Anda Akan Menghapus Data ini?');">
                                                     <span class="mdi mdi-delete-empty"></span>
                                                 </button>
-                                                <a href="" class="btn btn-sm btn-info ml-1">
-                                                    <span class="mdi mdi-pencil"></span>
-                                                </a>
                                             </form>
+                                            @endif
+                                           
                                         </td>
                                     </tr>
                                     @endforeach

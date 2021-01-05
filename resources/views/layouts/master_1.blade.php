@@ -96,7 +96,7 @@
 									<li>
 										<div class="dropdown-divider"></div>
 										<div class="dropdown-divider"></div>
-										<a class="dropdown-item" href="#">Logout</a>
+										<a class="dropdown-item" href="/logout">Logout</a>
 										<div class="dropdown-divider"></div>
 									</li>
 								</div>
@@ -145,7 +145,7 @@
 						</div>
                 <ul class="nav nav-secondary">
                     <li class="nav-item">
-                        <a href="#"> <i class="mdi mdi-view-dashboard"></i>
+                        <a href="{{ route('dashboard') }}"> <i class="mdi mdi-view-dashboard"></i>
                            <p>Dashboard</p></a>
                     </li>
                     <li class="nav-item">
