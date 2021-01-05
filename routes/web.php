@@ -21,7 +21,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('auth/login');
+    return view('auth/new/login');
+
+Route::get('/loket',[LoketController::class, 'index'])->name('loket.index');
+    
+
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

@@ -21,28 +21,29 @@
                             <h4 class="card-title">Form Pengajuan Pencarian Buku Tanah</h4>
                         </div>
                         <div class="card-body">
-                            <form action="" method="POST"  enctype="multipart/form-data">
+                            <form action="{{ $variabelUpdate->action }}" method="POST"  enctype="multipart/form-data">
                                 @csrf
+                                @method($variabelUpdate->method)
                                 <div class="row">
                                     <div class="col-md-3 col-lg-3">
                                         <div class="form-group">
                                             <label for="">No Berkas</label>
                                             <input type="text" class="form-control" name="no_berkas" id=""
-                                                placeholder="Input Nomor Berkas">
+                                                placeholder="Input Nomor Berkas" value="{{ $loketUpdate->no_berkas ?? '' }}">
                                         </div>
                                     </div>
                                     <div class="col-md-3 col-lg-3">
                                         <div class="form-group">
                                             <label for="">Tahun</label>
                                             <input type="text" class="form-control" name="tahun" id=""
-                                                placeholder="Input Tahun Berkas">
+                                                placeholder="Input Tahun Berkas" value="{{ $loketUpdate->tahun ?? '' }}">
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-lg-6">
                                         <div class="form-group">
                                             <label for="">No Hak</label>
                                             <input type="text" class="form-control" name="no_hak" id=""
-                                                placeholder="Nomor Hak">
+                                                placeholder="Nomor Hak" value="{{ $loketUpdate->no_hak ?? '' }}">
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-lg-6">
@@ -134,7 +135,6 @@
                                                     class="spinner-grow spinner-grow-sm"></span> Diproses..</button>
                                         </td>
                                         <td>
-                                            @if ($loket->user_id == auth()->id())
                                             <a href="/loket?id={{ $loket->id }}" class="btn btn-sm btn-info float-right">
                                                 <span class="mdi mdi-pencil"></span>
                                                 </a>
@@ -146,7 +146,6 @@
                                                     <span class="mdi mdi-delete-empty"></span>
                                                 </button>
                                             </form>
-                                            @endif
                                            
                                         </td>
                                     </tr>
