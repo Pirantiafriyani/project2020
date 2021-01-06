@@ -21,9 +21,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('auth/new/login');
-
-Route::get('/loket',[LoketController::class, 'index'])->name('loket.index');
+    return view('auth/login');
     
 
 });
