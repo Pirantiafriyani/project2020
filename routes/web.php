@@ -21,9 +21,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('auth/new/login');
-
-Route::get('/loket',[LoketController::class, 'index'])->name('loket.index');
+    return view('auth/login');
     
 
 });
@@ -45,8 +43,6 @@ Route::get('/loket',[LoketController::class, 'index'])->name('loket.index');
 Route::post('/loket', [LoketController::class, 'store'])->name('loket.store');
 Route::delete('/loket{loket}/delete', [LoketController::class, 'destroy'])->name('loket.destroy');
 Route::patch('/loket/{id}/update',[LoketController::class, 'update'])->name('loket.update');
-Route::patch('/loket/{id}/update',[LoketController::class, 'updateStatus'])->name('loket.update');
-
 
 
 // ---------------------------------------------------------------------------------

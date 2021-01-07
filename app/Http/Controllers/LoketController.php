@@ -84,17 +84,4 @@ class LoketController extends Controller
             // return $loket;
             return redirect()->route('loket.index');
     }
-
-    public function updateStatus(Request $request, $id)
-    {
-        $status = Loket::find($id);
-        if($satus->status == 1){
-        $satus->status = 0;
-        }
-        else{
-            $satus->status = 1;
-        }
-        if($satus->save());
-        return redirect()->back();
-    }
 }

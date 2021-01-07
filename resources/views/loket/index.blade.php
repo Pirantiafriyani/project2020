@@ -131,15 +131,13 @@
                                         <td>{{ $loket->kecamatan }}</td>
                                         <td>{{ $loket->layanan_id }}</td>
                                         <td>{{ $loket->created_at}}</td>
-                                       <td> <a href="/loket?id={{ $loket->id }}" class="btn btn-sm btn-warning">
-                                            <span class="spinner-grow spinner-grow-sm">{{$loket->satus}}</span>
-                                        </a>
-                                       </td>
-                                        
+                                        <td><button class="btn btn-sm btn-warning" disabled><span
+                                                    class="spinner-grow spinner-grow-sm"></span> Diproses..</button>
+                                        </td>
                                         <td>
                                             <a href="/loket?id={{ $loket->id }}" class="btn btn-sm btn-info float-right">
                                                 <span class="mdi mdi-pencil"></span>
-                                            </a>
+                                                </a>
                                             <form class="" action="{{ route('loket.destroy', $loket) }}" method="POST">
                                                 @csrf
                                                 {{ method_field('DELETE') }}
