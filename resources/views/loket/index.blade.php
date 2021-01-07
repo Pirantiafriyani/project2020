@@ -60,7 +60,7 @@
                                     <div class="col-md-6 col-lg-6">
                                         <div class="form-group">
                                             <label for="">Desa</label>
-                                            <select name="desa" id="desa" class="form-control ">
+                                            <select name="desa" id="desa" class="form-control " value="{{ $loketUpdate->desa ?? '' }}">
                                                 @foreach ($loketDesa as $desa)
                                                 <option value="{{ $desa->name }}"
                                                     data-kecamatan="{{ $desa->kecamatan }}" disabled>{{ $desa->name }}
@@ -72,7 +72,7 @@
                                     <div class="col-md-6 col-lg-6">
                                         <div class="form-group">
                                             <label for="">Jenis Hak</label>
-                                            <select class="form-control" name="jenis_hak" id="">
+                                            <select class="form-control" name="jenis_hak" id="" value="{{ $loketUpdate->jenis_hak ?? '' }}">
                                                 <option>HM</option>
                                                 <option>HGB</option>
                                                 <option>HGU</option>
@@ -84,7 +84,7 @@
                                     <div class="col-md-6 col-lg-6">
                                         <div class="form-group">
                                             <label for="">Jenis Permohonan</label>
-                                            <select name="layanan" id="" class="form-control selectpicker"
+                                            <select value="{{ $loketUpdate->layanan}}" name="layanan" id="" class="form-control selectpicker" 
                                                 data-live-search="true" data-title="Pilih Jenis Permohonan">
                                                 @foreach ($loketLayanan as $layanan)
                                                 <option value="{{ $layanan->name }}">{{ $layanan->name }}</option>

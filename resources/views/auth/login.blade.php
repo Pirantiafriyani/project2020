@@ -1,5 +1,5 @@
 @extends('layouts/login')
-@section('content_login')
+@section('content')
 
 <x-guest-layout>
     <x-jet-authentication-card>
