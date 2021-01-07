@@ -96,7 +96,13 @@
 									<li>
 										<div class="dropdown-divider"></div>
 										<div class="dropdown-divider"></div>
-										<a class="dropdown-item" href="/logout">Logout</a>
+										<a class="dropdown-item" href="/logout" onclick="event.preventDefault();
+											document.getElementById('form-logout').submit();">
+											Logout
+										</a>
+										<form method="POST" action="{{ route('logout') }}" id="form-logout" class="d-none">
+											@csrf
+										</form>
 										<div class="dropdown-divider"></div>
 									</li>
 								</div>

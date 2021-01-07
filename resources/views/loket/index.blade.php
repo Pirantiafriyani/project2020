@@ -131,9 +131,8 @@
                                         <td>{{ $loket->kecamatan }}</td>
                                         <td>{{ $loket->layanan_id }}</td>
                                         <td>{{ $loket->created_at}}</td>
-                                        <td><button class="btn btn-sm btn-warning" disabled><span
-                                                    class="spinner-grow spinner-grow-sm"></span> Diproses..</button>
-                                        </td>
+                                        <td><button class="{{ $loket->status_warna }}" disabled><span class="{{ $loket->status_spinner }}"></span></a>
+                                            {{ $loket->status_label }}</td>
                                         <td>
                                             <a href="/loket?id={{ $loket->id }}" class="btn btn-sm btn-info float-right">
                                                 <span class="mdi mdi-pencil"></span>
