@@ -8,14 +8,30 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Form Pengajuan Pencarian Buku Tanah</h4>
+                                <h4 class="card-title">Database Pencarian Buku Tanah</h4>
                             </div>
                             <div class="card-body">
-                                <form>
-                                    <div class="form-group float-right">
-                                        <input type="submit" class="btn btn-primary" value="Konfirmasi">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <select name="" id="" class="form-control"
+                                            data-live-search="true" data-title="Cari Status Proses">
+                                            <option value=""></option>
+                                        </select>
                                     </div>
-                                </form>
+                                    <form action="">
+                                        <div class="float-right">
+                                            <input type="submit" class="btn btn-info" value="Cari">
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="form-group">
+                                    <form action="">
+                                        <div class="float-right">
+                                            <input type="submit" class="btn btn-primary" value="Konfirmasi">
+                                        </div>
+                                    </form>
+                                </div>
+                                <br>
                                 <div class="table-responsive">
                                     <table id="basic-datatables" class="display table table-striped table-hover">
                                         <thead>
@@ -33,7 +49,6 @@
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
-
                                         <tbody>
                                             @php
                                             $no = 1;
@@ -49,10 +64,11 @@
                                                 <td>{{ $arsip->kecamatan }}</td>
                                                 <td>{{ $arsip->layanan_id }}</td>
                                                 <td>{{ $arsip->created_at}}</td>
-                                                <td><button class="{{ $arsip->status_warna }}" disabled><span
+                                                <td><button class="{{ $arsip->status_warna }}"><span
                                                             class="{{ $arsip->status_spinner }}"></span></a>{{ $arsip->status_label }}
                                                 </td>
-                                                <td><input class="form-check" data-size="lg" type="checkbox" value="" id="defaultCheck1">
+                                                <td><input class="form-check" data-size="lg" type="checkbox" value=""
+                                                        id="defaultCheck1">
                                                 </td>
                                             </tr>
                                             @endforeach

@@ -99,6 +99,7 @@
                             </form>
                         </div>
                         <hr>
+                        
                         <div class="table-responsive">
                             <table id="basic-datatables" class="display table table-striped table-hover">
                                 <thead>

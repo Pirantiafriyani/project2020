@@ -162,13 +162,13 @@
                         <a href="{{ route('arsip.index') }}"> <i class="mdi mdi-book"></i>
                         <p>Arsip</p></a>
                     </li>
-                    <li class="nav-item">
+                     {{-- <li class="nav-item">
                         <a href="{{ route('monitoring.index') }}"> <i class="mdi mdi-laptop-mac"></i>
-                            <p>Monitoring</p></a>
+                            <p>Monitoring</p></a> --}}
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('laporan.index') }}"> <i class="mdi mdi-file-chart"></i>
-                            <p>Laporan</p></a>
+                        <a href="{{ route('history.index') }}"> <i class="mdi mdi-file-chart"></i>
+                            <p>History</p></a>
                     </li>
 
                 </ul>

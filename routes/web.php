@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ArsipController;
+use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\LayoutsController;
 use App\Http\Controllers\LoketController;
@@ -36,7 +37,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::get('/monitoring',[MonitoringController::class, 'index'])->name('monitoring.index');
 
     // ---------------------------------------------------------------------------------
-    Route::get('/laporan',[LaporanController::class, 'index'])->name('laporan.index');
+    Route::get('/history',[HistoryController::class, 'index'])->name('history.index');
 
     // ---------------------------------------------------------------------------------
     // loket
