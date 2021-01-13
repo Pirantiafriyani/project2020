@@ -60,7 +60,7 @@
                                     <div class="col-md-6 col-lg-6">
                                         <div class="form-group">
                                             <label for="">Desa</label>
-                                            <select name="desa" id="desa" class="form-control " value="{{ $loketUpdate->desa ?? '' }}">
+                                            <select name="desa" id="desa" class="form-control ">
                                                 @foreach ($loketDesa as $desa)
                                                 <option value="{{ $desa->name }}"
                                                     data-kecamatan="{{ $desa->kecamatan }}" disabled>{{ $desa->name }}
@@ -72,7 +72,7 @@
                                     <div class="col-md-6 col-lg-6">
                                         <div class="form-group">
                                             <label for="">Jenis Hak</label>
-                                            <select class="form-control" name="jenis_hak" id="" value="{{ $loketUpdate->jenis_hak ?? '' }}">
+                                            <select class="form-control" name="jenis_hak" id="">
                                                 <option>HM</option>
                                                 <option>HGB</option>
                                                 <option>HGU</option>
@@ -84,7 +84,7 @@
                                     <div class="col-md-6 col-lg-6">
                                         <div class="form-group">
                                             <label for="">Jenis Permohonan</label>
-                                            <select value="{{ $loketUpdate->layanan}}" name="layanan" id="" class="form-control selectpicker" 
+                                            <select name="layanan" id="" class="form-control selectpicker"
                                                 data-live-search="true" data-title="Pilih Jenis Permohonan">
                                                 @foreach ($loketLayanan as $layanan)
                                                 <option value="{{ $layanan->name }}">{{ $layanan->name }}</option>
@@ -99,6 +99,7 @@
                             </form>
                         </div>
                         <hr>
+                        
                         <div class="table-responsive">
                             <table id="basic-datatables" class="display table table-striped table-hover">
                                 <thead>
@@ -131,9 +132,8 @@
                                         <td>{{ $loket->kecamatan }}</td>
                                         <td>{{ $loket->layanan_id }}</td>
                                         <td>{{ $loket->created_at}}</td>
-                                        <td><button class="btn btn-sm btn-warning" disabled><span
-                                                    class="spinner-grow spinner-grow-sm"></span> Diproses..</button>
-                                        </td>
+                                        <td><button class="{{ $loket->status_warna }}" disabled><span class="{{ $loket->status_spinner }}"></span></a>
+                                            {{ $loket->status_label }}</td>
                                         <td>
                                             <a href="/loket?id={{ $loket->id }}" class="btn btn-sm btn-info float-right">
                                                 <span class="mdi mdi-pencil"></span>

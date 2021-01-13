@@ -33,7 +33,7 @@
 		</div>
 		<div class="login-aside w-50 d-flex align-items-center justify-content-center bg-white">
 			
-			@yield('content')
+			@yield('content_login')
 
 		</div>
 	</div>

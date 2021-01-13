@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ArsipController;
+use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\LayoutsController;
 use App\Http\Controllers\LoketController;
@@ -30,32 +31,33 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-// ---------------------------------------------------------------------------------
-// layouts
-Route::get('/monitoring',[MonitoringController::class, 'index'])->name('monitoring.index');
+Route::group(['middleware' => ['auth:sanctum']], function () {
+    // ---------------------------------------------------------------------------------
+    // layouts
+    Route::get('/monitoring',[MonitoringController::class, 'index'])->name('monitoring.index');
 
-// ---------------------------------------------------------------------------------
-Route::get('/laporan',[LaporanController::class, 'index'])->name('laporan.index');
+    // ---------------------------------------------------------------------------------
+    Route::get('/history',[HistoryController::class, 'index'])->name('history.index');
 
-// ---------------------------------------------------------------------------------
-// loket
-Route::get('/loket',[LoketController::class, 'index'])->name('loket.index');
-Route::post('/loket', [LoketController::class, 'store'])->name('loket.store');
-Route::delete('/loket{loket}/delete', [LoketController::class, 'destroy'])->name('loket.destroy');
-Route::patch('/loket/{id}/update',[LoketController::class, 'update'])->name('loket.update');
+    // ---------------------------------------------------------------------------------
+    // loket
+    Route::get('/loket',[LoketController::class, 'index'])->name('loket.index');
+    Route::post('/loket', [LoketController::class, 'store'])->name('loket.store');
+    Route::delete('/loket{loket}/delete', [LoketController::class, 'destroy'])->name('loket.destroy');
+    Route::patch('/loket/{id}/update',[LoketController::class, 'update'])->name('loket.update');
+    Route::get('/loket/{status}/{id}',[LoketController::class, 'storeUpdate'])->name('loket.storeUpdate');
+
+    // ---------------------------------------------------------------------------------
+    // Arsip
+    Route::get('/arsip',[ArsipController::class, 'index'])->name('arsip.index');
+});
 
 
-// ---------------------------------------------------------------------------------
-// Arsip
-Route::get('/arsip',[ArsipController::class, 'index'])->name('arsip.index');
+// Route::get('logout', function ()
+// {
+//     Auth::logout();
+//     Session()->flush();
 
-
-
-Route::get('logout', function ()
-{
-    Auth::logout();
-    Session()->flush();
-
-    return Redirect::to('/');
-})->name('logout');
+//     return Redirect::to('/');
+// })->name('logout');
 

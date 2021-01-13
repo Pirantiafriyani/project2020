@@ -96,7 +96,13 @@
 									<li>
 										<div class="dropdown-divider"></div>
 										<div class="dropdown-divider"></div>
-										<a class="dropdown-item" href="/logout">Logout</a>
+										<a class="dropdown-item" href="/logout" onclick="event.preventDefault();
+											document.getElementById('form-logout').submit();">
+											Logout
+										</a>
+										<form method="POST" action="{{ route('logout') }}" id="form-logout" class="d-none">
+											@csrf
+										</form>
 										<div class="dropdown-divider"></div>
 									</li>
 								</div>
@@ -156,13 +162,13 @@
                         <a href="{{ route('arsip.index') }}"> <i class="mdi mdi-book"></i>
                         <p>Arsip</p></a>
                     </li>
-                    <li class="nav-item">
+                     {{-- <li class="nav-item">
                         <a href="{{ route('monitoring.index') }}"> <i class="mdi mdi-laptop-mac"></i>
-                            <p>Monitoring</p></a>
+                            <p>Monitoring</p></a> --}}
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('laporan.index') }}"> <i class="mdi mdi-file-chart"></i>
-                            <p>Laporan</p></a>
+                        <a href="{{ route('history.index') }}"> <i class="mdi mdi-file-chart"></i>
+                            <p>History</p></a>
                     </li>
 
                 </ul>
