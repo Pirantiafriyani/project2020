@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 05 Jan 2021 pada 16.49
+-- Waktu pembuatan: 14 Jan 2021 pada 15.34
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.4.1
 
@@ -531,15 +531,25 @@ CREATE TABLE `lokets` (
 --
 
 INSERT INTO `lokets` (`id`, `user_id`, `no_berkas`, `tahun`, `no_hak`, `jenis_hak`, `desa`, `kecamatan`, `layanan_id`, `petugas_id`, `proses`, `status`, `created_at`, `updated_at`) VALUES
-(14, 1, '2828', 2020, 600, 'HM', 'SUKAJAYA', 'SUKAJAYA', 'Balik Nama', NULL, NULL, NULL, '2021-01-04 06:11:14', '2021-01-04 06:11:14'),
-(15, 1, '123366', 2020, 9000, 'HM', 'CICADAS', 'CIAMPEA', 'Balik Nama', NULL, NULL, NULL, '2021-01-04 08:02:09', '2021-01-04 08:02:09'),
-(16, 1, '66654', 2020, 900, 'HGU', 'CINAGARA', 'CARINGIN', 'Balik Nama', NULL, NULL, NULL, '2021-01-04 08:03:03', '2021-01-04 08:03:03'),
-(17, 1, '9986', 2012, 362, 'HGU', 'SUKARESMI', 'TAMANSARI', 'Balik Nama', NULL, NULL, NULL, '2021-01-04 08:03:29', '2021-01-04 08:03:29'),
-(18, 1, '454', 2020, 9987, 'HGB', 'CARINGIN', 'CARINGIN', 'Roya', NULL, NULL, NULL, '2021-01-04 08:03:57', '2021-01-04 08:03:57'),
-(19, 1, '4444', 2020, 998, 'HM', 'CIBATU TIGA', 'CARIU', 'Roya', NULL, NULL, NULL, '2021-01-04 08:04:18', '2021-01-04 08:04:18'),
-(20, 1, '8887', 2019, 9901, 'HGB', 'CIOMAS', 'TENJO', 'Roya', NULL, NULL, NULL, '2021-01-04 08:06:14', '2021-01-04 08:06:14'),
-(23, 1, '1231', 2012, 900, 'HM', 'CIAWI', 'CIAWI', 'Balik Nama', NULL, NULL, NULL, '2021-01-05 06:24:01', '2021-01-05 06:24:01'),
-(24, 1, '9875', 2013, 12333, 'HGB', 'SUKAMULYA', 'SUKAMAKMUR', 'Roya', NULL, NULL, NULL, '2021-01-05 06:24:34', '2021-01-05 06:24:34');
+(28, 1, '100', 2013, 6004, 'HM', 'WATES JAYA', 'CIGOMBONG', 'Roya', NULL, NULL, 3, '2021-01-05 12:53:17', '2021-01-05 13:07:38'),
+(29, 1, '8900', 2019, 2111, 'HGB', 'BOJONG BARU', 'BOJONG GEDE', 'Roya', NULL, NULL, 1, '2021-01-05 12:54:05', '2021-01-05 13:08:13'),
+(30, 1, '1231', 2020, 70, 'HGU', 'WARINGIN JAYA', 'BOJONG GEDE', 'Balik Nama', NULL, NULL, 2, '2021-01-05 13:07:21', '2021-01-05 13:07:21'),
+(31, 1, '5454', 2021, 500, 'HGB', 'KEDUNG WARINGIN', 'BOJONG GEDE', 'Roya', NULL, NULL, 2, '2021-01-06 08:11:59', '2021-01-06 08:11:59'),
+(32, 1, '5454', 2021, 500, 'HGB', 'KEDUNG WARINGIN', 'BOJONG GEDE', 'Roya', NULL, NULL, 1, '2021-01-06 08:11:59', '2021-01-06 08:11:59');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `loket_hides`
+--
+
+CREATE TABLE `loket_hides` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `loket_id` int(30) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -615,9 +625,13 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('Ro2WILtywZKfXnKo8zwglcUCyZAoU5VmzhfQP1ys', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36', 'YTo0OntzOjk6Il9wcmV2aW91cyI7YToxOntzOjM6InVybCI7czoyMToiaHR0cDovLzEyNy4wLjAuMTo4MDAwIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo2OiJfdG9rZW4iO3M6NDA6Imkza0hyY015cEdBV3BDekx0U25WN3dXeTU4Sk1QZU5lMjlsU2dFbHUiO3M6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7fQ==', 1609854103),
-('YBaKjtgZ3KD3pZZ7mqHuYjkP1PRpNCOGFd4qURLf', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoicXAwR05LZkJJeDFvWENLRlI4QTFZSjN5SnJSM1ZkMXM2SzNiQWRvMCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzM6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9sb2tldD9pZD0xNCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7czoxNzoicGFzc3dvcmRfaGFzaF93ZWIiO3M6NjA6IiQyeSQxMCRnZ2tvcExrRGpNM0tydXlPcWZXTzUueUxKR0ptVGZJTlVyLm9HTUVIeFFyVmpoMEk0SVNUQyI7czoyMToicGFzc3dvcmRfaGFzaF9zYW5jdHVtIjtzOjYwOiIkMnkkMTAkZ2drb3BMa0RqTTNLcnV5T3FmV081LnlMSkdKbVRmSU5Vci5vR01FSHhRclZqaDBJNElTVEMiO30=', 1609861489),
-('YZy1cfbB8cFDdx4bW3Nk4KZ4F6G8la7tWSk1Y1ys', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36', 'YTo2OntzOjk6Il9wcmV2aW91cyI7YToxOntzOjM6InVybCI7czoyNzoiaHR0cDovLzEyNy4wLjAuMTo4MDAwL2xva2V0Ijt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo2OiJfdG9rZW4iO3M6NDA6Ik1wYmRZczBuVGx2ZmFOMmVBdk9kVmxTSnBHZllCZzVXU1FoNG15aHEiO3M6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7czoxNzoicGFzc3dvcmRfaGFzaF93ZWIiO3M6NjA6IiQyeSQxMCRnZ2tvcExrRGpNM0tydXlPcWZXTzUueUxKR0ptVGZJTlVyLm9HTUVIeFFyVmpoMEk0SVNUQyI7czoyMToicGFzc3dvcmRfaGFzaF9zYW5jdHVtIjtzOjYwOiIkMnkkMTAkZ2drb3BMa0RqTTNLcnV5T3FmV081LnlMSkdKbVRmSU5Vci5vR01FSHhRclZqaDBJNElTVEMiO30=', 1609860029);
+('c2VPi6j6xOI7KfqQZNsH4zxdLNM1leF20WcPzUNC', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiWjA3NTVYekxLNmVjeEtMdXpQWXlFQ1dCUUtPWUtYR0NGZEZSV01YeCI7czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTtzOjE3OiJwYXNzd29yZF9oYXNoX3dlYiI7czo2MDoiJDJ5JDEwJGdna29wTGtEak0zS3J1eU9xZldPNS55TEpHSm1UZklOVXIub0dNRUh4UXJWamgwSTRJU1RDIjtzOjk6Il9wcmV2aW91cyI7YToxOntzOjM6InVybCI7czoyNzoiaHR0cDovLzEyNy4wLjAuMTo4MDAwL2Fyc2lwIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czoyMToicGFzc3dvcmRfaGFzaF9zYW5jdHVtIjtzOjYwOiIkMnkkMTAkZ2drb3BMa0RqTTNLcnV5T3FmV081LnlMSkdKbVRmSU5Vci5vR01FSHhRclZqaDBJNElTVEMiO30=', 1610634817),
+('JITUMxUELLnIGCXmmXRhilWKGsFp7wSvnyZvOmxV', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36', 'YTo3OntzOjY6Il90b2tlbiI7czo0MDoiU3UydnNSSE5GaTdFSzZCdGFxR2xEeVdacmtqVDRxcUNlRXBsZTY4TSI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czozOiJ1cmwiO2E6MDp7fXM6OToiX3ByZXZpb3VzIjthOjE6e3M6MzoidXJsIjtzOjMxOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvZGFzaGJvYXJkIjt9czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTtzOjE3OiJwYXNzd29yZF9oYXNoX3dlYiI7czo2MDoiJDJ5JDEwJGdna29wTGtEak0zS3J1eU9xZldPNS55TEpHSm1UZklOVXIub0dNRUh4UXJWamgwSTRJU1RDIjtzOjIxOiJwYXNzd29yZF9oYXNoX3NhbmN0dW0iO3M6NjA6IiQyeSQxMCRnZ2tvcExrRGpNM0tydXlPcWZXTzUueUxKR0ptVGZJTlVyLm9HTUVIeFFyVmpoMEk0SVNUQyI7fQ==', 1610442898),
+('msmWbaogXscN1fUNI10mS0Htk9RDpPI2gYFJznju', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoidTJDZWNVeFEyWE9ia0wzYUxNZWJ4eFRJUHdXejJyWmtjN2s0Uk1peCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjc6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hcnNpcCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7czoxNzoicGFzc3dvcmRfaGFzaF93ZWIiO3M6NjA6IiQyeSQxMCRnZ2tvcExrRGpNM0tydXlPcWZXTzUueUxKR0ptVGZJTlVyLm9HTUVIeFFyVmpoMEk0SVNUQyI7czoyMToicGFzc3dvcmRfaGFzaF9zYW5jdHVtIjtzOjYwOiIkMnkkMTAkZ2drb3BMa0RqTTNLcnV5T3FmV081LnlMSkdKbVRmSU5Vci5vR01FSHhRclZqaDBJNElTVEMiO30=', 1610432322),
+('N30L1jq7IhvXoIOY2SY4cZWAeYnjSNukIqPdfz76', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoidTBZb2IwUWVhUWVYYnB3ZnZsblZGMGd3aU9FWVI4bkFONmliOTZBRCI7czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTtzOjE3OiJwYXNzd29yZF9oYXNoX3dlYiI7czo2MDoiJDJ5JDEwJGdna29wTGtEak0zS3J1eU9xZldPNS55TEpHSm1UZklOVXIub0dNRUh4UXJWamgwSTRJU1RDIjtzOjk6Il9wcmV2aW91cyI7YToxOntzOjM6InVybCI7czoyMToiaHR0cDovLzEyNy4wLjAuMTo4MDAwIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1610633477),
+('pFrMOe1BEf0MF2oj2flSkAZykQlpeFqtlzTZoopn', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiUURWanVHMFBIVk1tM3lBbmJQeGhzQkVveDJNY0hKeWR6NnF2UDVDeSI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fX0=', 1610203138),
+('tIPA9it1wACwyoedY6CB19nYNe2KJkROn2Lp4lAf', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiNDVMeUk2NUNsM1ZkTVNaRjhFQTV5REFEa2pnVkVuTkMzS1lzWXlQdyI7czozOiJ1cmwiO2E6MDp7fXM6OToiX3ByZXZpb3VzIjthOjE6e3M6MzoidXJsIjtzOjI3OiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvbG9naW4iO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO30=', 1610442844),
+('ZFvPocYyvMZGsLR11880OhQxHD8C8GB2V0Lpuxqc', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiM3RKdlhWb2xQVGdzaFMzTmtwUDIwNHc1UGdxbndqWXFWWkp1Mm5CRCI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7czoxNzoicGFzc3dvcmRfaGFzaF93ZWIiO3M6NjA6IiQyeSQxMCRnZ2tvcExrRGpNM0tydXlPcWZXTzUueUxKR0ptVGZJTlVyLm9HTUVIeFFyVmpoMEk0SVNUQyI7czoyMToicGFzc3dvcmRfaGFzaF9zYW5jdHVtIjtzOjYwOiIkMnkkMTAkZ2drb3BMa0RqTTNLcnV5T3FmV081LnlMSkdKbVRmSU5Vci5vR01FSHhRclZqaDBJNElTVEMiO30=', 1610176770);
 
 -- --------------------------------------------------------
 
@@ -645,7 +659,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `two_factor_secret`, `two_factor_recovery_codes`, `remember_token`, `current_team_id`, `profile_photo_path`, `created_at`, `updated_at`) VALUES
-(1, 'Abdur', 'user@gmail.com', NULL, '$2y$10$ggkopLkDjM3KruyOqfWO5.yLJGJmTfINUr.oGMEHxQrVjh0I4ISTC', NULL, NULL, 'RBsXI5n0VRsCq3TduScr8s392yWAeOiSRRHsNysU09NzyBzSPflzSYqJbTni', NULL, NULL, '2020-12-11 18:47:42', '2020-12-11 18:50:04');
+(1, 'Abdur', 'user@gmail.com', NULL, '$2y$10$ggkopLkDjM3KruyOqfWO5.yLJGJmTfINUr.oGMEHxQrVjh0I4ISTC', NULL, NULL, 'KRYqNoo8INZ6H7bPb2ZlUvScNYJoPMZQaOF0LBo2RM131uTTmugAf9DZarv0', NULL, NULL, '2020-12-11 18:47:42', '2020-12-11 18:50:04');
 
 --
 -- Indexes for dumped tables
@@ -674,6 +688,12 @@ ALTER TABLE `layanans`
 -- Indeks untuk tabel `lokets`
 --
 ALTER TABLE `lokets`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `loket_hides`
+--
+ALTER TABLE `loket_hides`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -731,7 +751,13 @@ ALTER TABLE `layanans`
 -- AUTO_INCREMENT untuk tabel `lokets`
 --
 ALTER TABLE `lokets`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+
+--
+-- AUTO_INCREMENT untuk tabel `loket_hides`
+--
+ALTER TABLE `loket_hides`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `migrations`
