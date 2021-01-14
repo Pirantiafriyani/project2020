@@ -71,7 +71,7 @@
 											<div class="col-7 col-stats">
 												<div class="numbers">
 													<p class="card-category">Konfirmasi Pencarian</p>
-													<h4 class="card-title">$ 1,345</h4>
+													<h4 class="card-title"> 1,345</h4>
 												</div>
 											</div>
 										</div>
