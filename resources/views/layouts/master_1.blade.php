@@ -22,6 +22,7 @@
 	<!-- CSS Files -->
 	<link rel="stylesheet" href="template/assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="template/assets/css/millenium.min.css">
+	<link rel="stylesheet" href="/css/custom.css">
 
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link rel="stylesheet" href="template/assets/css/demo.css">
@@ -33,11 +34,10 @@
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.min.css">
-
+	@notifyCss
 </head>
 <body>
 	<div class="wrapper classic-wrapper">
-
 		<div class="main-header">
 			<!-- Logo Header -->
 			<div class="logo-header" data-background-color="dark2">
@@ -150,23 +150,27 @@
 							</div>
 						</div>
                 <ul class="nav nav-secondary">
-                    <li class="nav-item">
+                    <li class="nav-item {{ Request::is('/dashboard') ? 'active' : '' }}">
                         <a href="{{ route('dashboard') }}"> <i class="mdi mdi-view-dashboard"></i>
-                           <p>Dashboard</p></a>
+						   <p>Dashboard</p>
+						   {{ Request::is() }}
+						</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item {{ Request::is('/loket') ? 'active' : '' }}">
                         <a href="{{ route('loket.index') }}"> <i class="mdi mdi-desktop-classic"></i>
-                            <p>Loket</p></a>
+							<p>Loket</p>
+						</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item {{ Request::is('arsip') ? 'active' : '' }}">
                         <a href="{{ route('arsip.index') }}"> <i class="mdi mdi-book"></i>
-                        <p>Arsip</p></a>
+							<p>Arsip</p>
+						</a>
                     </li>
                      {{-- <li class="nav-item">
                         <a href="{{ route('monitoring.index') }}"> <i class="mdi mdi-laptop-mac"></i>
                             <p>Monitoring</p></a> --}}
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item {{ Request::is('/history') ? 'active' : '' }}">
                         <a href="{{ route('history.index') }}"> <i class="mdi mdi-file-chart"></i>
                             <p>History</p></a>
                     </li>
@@ -174,6 +178,7 @@
                 </ul>
 					</div>
 				</div>
+
 			</div>
 			<!-- End Sidebar -->
 
@@ -181,6 +186,7 @@
             <!-- ISI CONTENT -->
 
         @yield('abdurrohman_content')
+		@include('notify::messages')
 
             <!-- AKHIR ISI CONTENT -->
             <!-- AKHIR CONTENT -->
@@ -362,15 +368,17 @@
 	<script src="template/assets/js/plugin/select2/select2.full.min.js"></script>
 
 	<!-- Sweet Alert -->
-	<script src="template/assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+	{{-- <script src="template/assets/js/plugin/sweetalert/sweetalert.min.js"></script> --}}
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 	<!-- Millenium JS -->
 	<script src="template/assets/js/millenium.min.js"></script>
 
 	<!-- Millenium DEMO methods, don't include it in your project! -->
 	<script src="template/assets/js/setting-demo.js"></script>
-	<script src="template/assets/js/demo.js"></script>
-
+	{{-- @include('notify::messages') --}}
+	{{-- <script src="template/assets/js/demo.js"></script> --}}
+	@notifyJs
 
     <script >
             $(document).ready(function() {
@@ -421,6 +429,7 @@
             });
         </script>
 
-        @stack('scripts')
+		@stack('scripts')
+		
 </body>
 </html>

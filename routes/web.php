@@ -50,6 +50,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     // ---------------------------------------------------------------------------------
     // Arsip
     Route::get('/arsip',[ArsipController::class, 'index'])->name('arsip.index');
+    Route::post('/arsip/{status}/update',[ArsipController::class, 'status']);
 });
 
 

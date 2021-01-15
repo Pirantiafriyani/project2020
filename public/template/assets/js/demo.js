@@ -16,18 +16,18 @@ Circles.create({
 })
 
 //Notify
-$.notify({
-	icon: 'flaticon-alarm-1',
-	title: 'Millenium',
-	message: 'Premium Bootstrap 4 Admin Dashboard',
-},{
-	type: 'secondary',
-	placement: {
-		from: "bottom",
-		align: "right"
-	},
-	time: 1000,
-});
+// $.notify({
+// 	icon: 'flaticon-alarm-1',
+// 	title: 'Millenium',
+// 	message: 'Premium Bootstrap 4 Admin Dashboard',
+// },{
+// 	type: 'secondary',
+// 	placement: {
+// 		from: "bottom",
+// 		align: "right"
+// 	},
+// 	time: 1000,
+// });
 
 // JQVmap
 $('#map-example').vectorMap(
@@ -53,7 +53,7 @@ $('#map-example').vectorMap(
 
 //Chart
 
-var ctx = document.getElementById('statisticsChart').getContext('2d');
+// var ctx = document.getElementById('statisticsChart').getContext('2d');
 
 var statisticsChart = new Chart(ctx, {
 	type: 'line',
