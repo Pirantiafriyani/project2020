@@ -1,13 +1,9 @@
 <?php
-
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ArsipController;
 use App\Http\Controllers\HistoryController;
-use App\Http\Controllers\LaporanController;
-use App\Http\Controllers\LayoutsController;
 use App\Http\Controllers\LoketController;
 use App\Http\Controllers\MonitoringController;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,12 +23,13 @@ Route::get('/', function () {
 
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+// Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+// })->name('dashboard');
 
 Route::group(['middleware' => ['auth:sanctum']], function () {
     // ---------------------------------------------------------------------------------
+    Route::get('/dashboard',[DashboardController::class, 'index'])->name('dashboard.index');
+
     // layouts
     Route::get('/monitoring',[MonitoringController::class, 'index'])->name('monitoring.index');
 

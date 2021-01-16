@@ -27,7 +27,7 @@
 										<div class="row">
 											<div class="col-5">
 												<div class="icon-big text-center">
-													<i class="flaticon-users"></i>
+													<i class="mdi mdi-compass-outline"></i>
 												</div>
 											</div>
 											<div class="col-7 col-stats">
@@ -46,7 +46,7 @@
 										<div class="row">
 											<div class="col-5">
 												<div class="icon-big text-center">
-													<i class="flaticon-interface-6"></i>
+													<i class="mdi mdi-bike"></i>
 												</div>
 											</div>
 											<div class="col-7 col-stats">
@@ -65,7 +65,7 @@
 										<div class="row">
 											<div class="col-5">
 												<div class="icon-big text-center">
-													<i class="flaticon-analytics"></i>
+													<i class="mdi mdi-playstation"></i>
 												</div>
 											</div>
 											<div class="col-7 col-stats">
@@ -84,7 +84,7 @@
 										<div class="row">
 											<div class="col-5">
 												<div class="icon-big">
-													<i class="flaticon-success"></i>
+													<i class="mdi mdi-heart-broken"></i>
 												</div>
 											</div>
 											<div class="col-7 col-stats">
@@ -103,7 +103,7 @@
 								<div class="card">
 									<div class="card-header">
 										<div class="card-head-row">
-											<div class="card-title">User Statistics</div>
+											<div class="card-title">Statistik Berkas</div>
 											<div class="card-tools">
 												<a href="#" class="btn btn-info btn-border btn-round btn-sm mr-2">
 													<span class="btn-label">
@@ -122,7 +122,7 @@
 									</div>
 									<div class="card-body">
 										<div class="chart-container" style="min-height: 375px">
-											<canvas id="statisticsChart"></canvas>
+											<canvas id="htmlLegendsChart"></canvas>
 										</div>
 										<div id="myChartLegend"></div>
 									</div>
@@ -132,5 +132,5 @@
 					</div>
 				</div>
 			</div>
-
 @endsection
+@include('dashboard.scripts')
