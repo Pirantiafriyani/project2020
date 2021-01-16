@@ -7,11 +7,9 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
-                            {{-- <div class="card-header">
-                                <h4 class="card-title">Database Pencarian Buku Tanah</h4>
-                            </div> --}}
                             <div class="card-body">
-                                <ul class="nav nav-tabs">
+                                <h4 class="card-title pa">Database Pencarian Buku Tanah</h4>
+                                <ul class="nav nav-tabs justify-content-end mt-2">
                                     <li class="nav-item">
                                         <a class="nav-link active " data-toggle="tab" href="#home">Data Request</a>
                                     </li>

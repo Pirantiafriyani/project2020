@@ -23,3 +23,15 @@ div[x-data] > div > .p-4{
 .selected-row {
     background-color: #b2bbff !important;
 }
+
+.nav-tabs .active{
+    color: #5867dd !important;
+}
+
+.pa{
+    position: absolute;
+}
+
+.card .card-header{
+    padding-bottom: 8px;
+}
