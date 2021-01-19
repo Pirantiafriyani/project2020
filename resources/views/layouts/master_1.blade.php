@@ -22,22 +22,22 @@
 	<!-- CSS Files -->
 	<link rel="stylesheet" href="template/assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="template/assets/css/millenium.min.css">
+	<link rel="stylesheet" href="/css/custom.css">
 
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link rel="stylesheet" href="template/assets/css/demo.css">
 
-    <link href="http://materialdesignicons.com/cdn/2.0.46/css/materialdesignicons.min.css" rel="stylesheet">
+	<link href="http://materialdesignicons.com/cdn/2.0.46/css/materialdesignicons.min.css" rel="stylesheet">
 
     <!-- CSS STATUS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.min.css">
-
+	@notifyCss
 </head>
 <body>
 	<div class="wrapper classic-wrapper">
-
 		<div class="main-header">
 			<!-- Logo Header -->
 			<div class="logo-header" data-background-color="dark2">
@@ -76,6 +76,45 @@
 						</form>
 					</div>
 					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+						<li class="nav-item dropdown hidden-caret submenu">
+							<a class="nav-link dropdown-toggle" href="#" id="notifDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<i class="mdi mdi-bell"></i>
+								<span class="notification">2</span>
+							</a>
+							<ul class="dropdown-menu notif-box animated fadeIn" aria-labelledby="notifDropdown">
+								<li>
+									<div class="dropdown-title">Ada 2 notifikasi</div>
+								</li>
+								<li>
+									<div class="scroll-wrapper notif-scroll scrollbar-outer" style="position: relative;"><div class="notif-scroll scrollbar-outer scroll-content" style="height: auto; margin-bottom: 0px; margin-right: 0px; max-height: 256px;">
+										<div class="notif-center">
+											<a href="#">
+												<div class="notif-icon notif-primary"> <i class="fa fa-user-plus"></i> </div>
+												<div class="notif-content">
+													<span class="block">
+														New user registered
+													</span>
+													<span class="time">5 minutes ago</span> 
+												</div>
+											</a>
+											<a href="#">
+												<div class="notif-icon notif-danger"> <i class="fa fa-heart"></i> </div>
+												<div class="notif-content">
+													<span class="block">
+														Farrah liked Admin
+													</span>
+													<span class="time">17 minutes ago</span> 
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="scroll-element scroll-x" style=""><div class="scroll-element_outer"><div class="scroll-element_size"></div><div class="scroll-element_track"></div><div class="scroll-bar ui-draggable ui-draggable-handle" style="width: 100px;"></div></div></div><div class="scroll-element scroll-y" style=""><div class="scroll-element_outer"><div class="scroll-element_size"></div><div class="scroll-element_track"></div><div class="scroll-bar ui-draggable ui-draggable-handle" style="height: 100px;"></div></div></div></div>
+								</li>
+								<li>
+									<a class="see-all" href="javascript:void(0);">See all notifications<i class="fa fa-angle-right"></i> </a>
+								</li>
+							</ul>
+						</li>
 						<li class="nav-item dropdown hidden-caret">
 							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
 								<div class="avatar-sm">
@@ -150,23 +189,27 @@
 							</div>
 						</div>
                 <ul class="nav nav-secondary">
-                    <li class="nav-item">
-                        <a href="{{ route('dashboard') }}"> <i class="mdi mdi-view-dashboard"></i>
-                           <p>Dashboard</p></a>
+                    <li class="nav-item {{ Request::is('dashboard') ? 'active' : '' }}">
+                        <a href="{{ route('dashboard.index') }}"> <i class="mdi mdi-view-dashboard"></i>
+						   <p>Dashboard</p>
+						   {{ Request::is() }}
+						</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item {{ Request::is('loket') ? 'active' : '' }}">
                         <a href="{{ route('loket.index') }}"> <i class="mdi mdi-desktop-classic"></i>
-                            <p>Loket</p></a>
+							<p>Loket</p>
+						</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item {{ Request::is('arsip') ? 'active' : '' }}">
                         <a href="{{ route('arsip.index') }}"> <i class="mdi mdi-book"></i>
-                        <p>Arsip</p></a>
+							<p>Arsip</p>
+						</a>
                     </li>
                      {{-- <li class="nav-item">
                         <a href="{{ route('monitoring.index') }}"> <i class="mdi mdi-laptop-mac"></i>
                             <p>Monitoring</p></a> --}}
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item {{ Request::is('history') ? 'active' : '' }}">
                         <a href="{{ route('history.index') }}"> <i class="mdi mdi-file-chart"></i>
                             <p>History</p></a>
                     </li>
@@ -174,6 +217,7 @@
                 </ul>
 					</div>
 				</div>
+
 			</div>
 			<!-- End Sidebar -->
 
@@ -181,6 +225,7 @@
             <!-- ISI CONTENT -->
 
         @yield('abdurrohman_content')
+		@include('notify::messages')
 
             <!-- AKHIR ISI CONTENT -->
             <!-- AKHIR CONTENT -->
@@ -362,15 +407,17 @@
 	<script src="template/assets/js/plugin/select2/select2.full.min.js"></script>
 
 	<!-- Sweet Alert -->
-	<script src="template/assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+	{{-- <script src="template/assets/js/plugin/sweetalert/sweetalert.min.js"></script> --}}
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 	<!-- Millenium JS -->
 	<script src="template/assets/js/millenium.min.js"></script>
 
 	<!-- Millenium DEMO methods, don't include it in your project! -->
 	<script src="template/assets/js/setting-demo.js"></script>
-	<script src="template/assets/js/demo.js"></script>
-
+	{{-- @include('notify::messages') --}}
+	{{-- <script src="template/assets/js/demo.js"></script> --}}
+	@notifyJs
 
     <script >
             $(document).ready(function() {
@@ -421,6 +468,7 @@
             });
         </script>
 
-        @stack('scripts')
+		@stack('scripts')
+		
 </body>
 </html>

@@ -20,9 +20,9 @@ class Loket extends Model
     public function getStatusLabelAttribute()
     {
         if($this->status == 1)
-            return  'Request';
+            return 'Request';
         else if($this->status == 2)
-            return  'Diproses';
+            return 'Diproses';
         else
             return 'Tersedia';
 
@@ -31,22 +31,18 @@ class Loket extends Model
     public function getStatusWarnaAttribute()
     {
         if($this->status == 1)
-            return  
-                'btn btn-sm btn-warning';
+            return 'btn btn-sm btn-warning';
                 
         else if($this->status == 2)
-            return 
-            'btn btn-sm btn-info';
+            return 'btn btn-sm btn-info';
         else
-            return 
-                'btn btn-sm btn-success';
+            return 'btn btn-sm btn-success';
     }
 
     public function getStatusSpinnerAttribute()
     {
         if ($this->status == 1)
-            return
-            'spinner-grow spinner-grow-sm';
+            return 'spinner-grow spinner-grow-sm';
     }
 
 }

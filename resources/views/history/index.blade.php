@@ -8,7 +8,7 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Database Pencarian Buku Tanah</h4>
+                            <h4 class="card-title">History Pencarian Buku Tanah</h4>
                         </div>
                         <div class="card-body">
                             <div class="row">
