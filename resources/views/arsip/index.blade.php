@@ -127,6 +127,19 @@
                                                     </tr>
                                                     @endforeach
                                                 </tbody>
+                                                <tfoot>
+                                                    <tr>
+                                                        <td colspan="11" style="padding-right: 0px !important;">
+                                                            <div class="form-group">
+                                                                <div class="float-right">
+                                                                    <button type="button" class="btn btn-success" id="confirm-request">
+                                                                        <i class="mdi mdi-checkbox-marked-circle-outline"></i> Konfirmasi
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tfoot>
                                             </table>
                                         </div>
                                     </div>

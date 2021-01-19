@@ -1,6 +1,7 @@
 @push('scripts')
 <script>
-    $('#table-request, #table-proses').DataTable({});
+    $('#table-request, #table-request').DataTable({});
+    $('#table-proses, #table-proses').DataTable({});
 
     $('.checkbox-request').on('change', function(){
         if($(this).is(':checked'))
