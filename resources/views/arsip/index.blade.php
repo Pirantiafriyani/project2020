@@ -124,7 +124,6 @@
                                                         <td>
                                                             {{-- <input class="form-check checkbox-md checkbox-request" data-size="lg" type="checkbox" value="{{ $request->id }}" name="ids[{{ $request->id }}]"> --}}
                                                             <input class="form-check checkbox-md checkbox-proses" data-size="lg" type="checkbox" value="" name="">
-                                                            <input class="form-check" data-size="lg" type="checkbox">
                                                         </td>
                                                     </tr>
                                                     @endforeach
