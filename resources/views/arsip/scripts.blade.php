@@ -34,6 +34,7 @@
             )
         }
     })
+<<<<<<< HEAD
 
 
 
@@ -71,5 +72,7 @@ $('#confirm-proses').on('click', function(){
         )
     }
 })
+=======
+>>>>>>> 90152913d42498e6c253a36950a4e2c2f9edce6f
 </script>
 @endpush
