@@ -122,25 +122,11 @@
                                                                     class="{{ $process->status_spinner }}"></span></a>{{ $process->status_label }}
                                                         </td>
                                                         <td>
-                                                            {{-- <input class="form-check checkbox-md checkbox-request" data-size="lg" type="checkbox" value="{{ $request->id }}" name="ids[{{ $request->id }}]"> --}}
-                                                            <input class="form-check checkbox-md checkbox-proses" data-size="lg" type="checkbox" value="" name="">
+                                                            <input class="form-check" data-size="lg" type="checkbox">
                                                         </td>
                                                     </tr>
                                                     @endforeach
                                                 </tbody>
-                                                <tfoot>
-                                                    <tr>
-                                                        <td colspan="11" style="padding-right: 0px !important;">
-                                                            <div class="form-group">
-                                                                <div class="float-right">
-                                                                    <button type="button" class="btn btn-success" id="confirm-proses">
-                                                                        <i class="mdi mdi-checkbox-marked-circle-outline"></i> Konfirmasi
-                                                                    </button>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                </tfoot>
                                             </table>
                                         </div>
                                     </div>
