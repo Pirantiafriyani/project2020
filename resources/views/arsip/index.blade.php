@@ -133,7 +133,7 @@
                                                             <div class="form-group">
                                                                 <div class="float-right">
                                                                     <button type="button" class="btn btn-success" id="confirm-request">
-                                                                        <i class="mdi mdi-checkbox-marked-circle-outline"></i> Konfirmasi
+                                                                        <i class="mdi mdi-briefcase-check"></i> Konfirmasi
                                                                     </button>
                                                                 </div>
                                                             </div>
