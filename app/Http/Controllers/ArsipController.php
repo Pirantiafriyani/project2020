@@ -30,6 +30,7 @@ class ArsipController extends Controller
                 $loket->status = $status;
                 $loket->save();
             endforeach;
+        
         endif;
         
         notify()->info("Data berhasil $statusStr ⚡️", "Berhasil");

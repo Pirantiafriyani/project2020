@@ -87,8 +87,10 @@
                                     <div id="menu1" class="tab-pane">
                                         <br>
                                         <div class="table-responsive">
-                                            <table id="table-proses" class="display table table-striped table-hover">
-                                                <thead>
+                                            <form method="POST" action="/arsip/2/update" id="form-process">
+                                                @csrf
+                                                <table id="table-process" class="display table table-striped table-hover">
+                                                    <thead>
                                                     <tr>
                                                         <th>No.</th>
                                                         <th>No.Berkas</th>
@@ -122,7 +124,7 @@
                                                                     class="{{ $process->status_spinner }}"></span></a>{{ $process->status_label }}
                                                         </td>
                                                         <td>
-                                                            <input class="form-check" data-size="lg" type="checkbox">
+                                                            <input class="form-check checkbox-md checkbox-process" data-size="lg" type="checkbox" value="{{ $process->id }}" name="ids[{{ $process->id }}]">
                                                         </td>
                                                     </tr>
                                                     @endforeach
@@ -132,7 +134,7 @@
                                                         <td colspan="11" style="padding-right: 0px !important;">
                                                             <div class="form-group">
                                                                 <div class="float-right">
-                                                                    <button type="button" class="btn btn-success" id="confirm-request">
+                                                                    <button type="button" class="btn btn-success" id="confirm-process">
                                                                         <i class="mdi mdi-briefcase-check"></i> Konfirmasi
                                                                     </button>
                                                                 </div>

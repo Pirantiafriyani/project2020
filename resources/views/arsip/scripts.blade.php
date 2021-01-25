@@ -35,5 +35,41 @@
             )
         }
     })
+
+
+
+    $('.checkbox-request1').on('change', function(){
+        if($(this).is(':checked'))
+            $(this).closest('tr').addClass('selected-row');
+        else
+            $(this).closest('tr').removeClass('selected-row');
+    })
+
+
+    $('#confirm-process').on('click', function(){
+        $form = $('#form-process');
+        countCheck = $form.find(':checkbox:checked').length;
+        if(countCheck > 0){
+            Swal.fire({
+                title: 'Konfirmasi',
+                text: "Yakin akan proses " + countCheck + " Berkas?",
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Ya, Konfirmasi',
+                cancelButtonText: 'Batal'
+                }).then((result) => {
+                if (result.isConfirmed) {
+                    $form.trigger('submit');
+                }
+            })
+        } else {
+            Swal.fire(
+                'Opsss..',
+                'belum ada data yang kamu pilih.',
+            )
+        }
+    })
 </script>
 @endpush
